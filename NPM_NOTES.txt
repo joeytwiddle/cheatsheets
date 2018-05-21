@@ -1,0 +1,5 @@
+When updating the package (or just updating the README) you must bump the version before you publish.
+
+    npm version patch
+    npm publish
+

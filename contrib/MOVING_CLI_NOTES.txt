@@ -1,0 +1,1 @@
+On iTerm2, Shift-Left and Shift-Right jump words
