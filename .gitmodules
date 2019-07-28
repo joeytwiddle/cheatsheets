@@ -1,0 +1,3 @@
+[submodule "contrib/modern-js-cheatsheat"]
+    path = contrib/modern-js-cheatsheet
+	url = https://github.com/mbeaudru/modern-js-cheatsheet
