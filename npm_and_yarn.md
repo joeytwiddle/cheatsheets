@@ -6,6 +6,7 @@ yarn list <package_name>
 
 ### What versions of this package are available?
 ```bash
+npm info <package_name> versions
 yarn info <package_name> versions
 ```
 

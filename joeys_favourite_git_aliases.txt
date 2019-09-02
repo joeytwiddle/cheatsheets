@@ -1,3 +1,7 @@
+# My full list of git aliases is here: https://github.com/joeytwiddle/rc_files/blob/master/j/config/auto.sh/git_aliases
+#
+# But this file is a summary of ones I find most useful.  It's probably easier to read.
+
 alias gs='git status'
 alias gl='git log --stat -p'
 alias gll='git log --oneline --graph'
