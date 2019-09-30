@@ -32,3 +32,23 @@ yarn audit
 npx npm-check -u
 yarn upgrade-interactive
 ```
+
+To ignore semver:
+```bash
+yarn upgrade-interactive --latest
+```
+
+### Clean cache (to reclaim disk space)
+```bash
+du -sh "$HOME"/.npm/_cacache
+npm cache clean
+du -sh "$(yarn cache dir)"
+yarn cache clean
+```
+
+If you use `nvm` that also has a cache folder (although it seems to manage it quite well itself)
+```bash
+du -sh "$(nvm cache dir)"
+du -sh "$NVM_DIR"/.cache
+nvm cache clear
+```

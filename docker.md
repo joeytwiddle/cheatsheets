@@ -165,10 +165,10 @@ If you want to enter the container as the root user, add `-u root`
 
 ```bash
 # For Alpine Linux
-apk add bash procps findutils bind-tools nmap man vim
+apk add bash procps findutils bind-tools nmap man vim curl
 
 # For Debian
-apt-get update && apt-get -y install procps findutils inetutils-ping dnsutils nmap man vim
+apt-get update && apt-get -y install procps findutils inetutils-ping dnsutils nmap man vim curl
 
 alias l='ls -lartFh --color'
 ```
@@ -188,15 +188,23 @@ docker cp /path <container_id>:/path
 
 This even works with containers which are not running!
 
-We can even copy from an image [without starting it](https://stackoverflow.com/a/51186557/99777).
-
 We can also remove files:
 
 ```bash
 docker rm -fv /unwanted/file
 ```
 
-## Working around the symlinks bug
+# Copy files out of a docker image
+
+We can even copy from an image [without starting it](https://stackoverflow.com/a/51186557/99777).
+
+```bash
+docker create --name temp <image_name>
+
+docker cp temp:/path /path
+```
+
+## Working around the symlinks bug when copying
 
 Docker can have trouble copying symlinks:
 
@@ -214,9 +222,10 @@ docker cp <container_id>:/path - | tar -C dest -x
 
 # Export and import
 
-We can also export an entire container (could be stopped):
+We can also export an entire container (running or stopped):
 
 ```bash
+docker export <container_name> > container.tar
 docker export <container_name> | gzip -c > container.tgz
 ```
 

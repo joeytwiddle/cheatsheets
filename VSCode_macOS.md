@@ -37,12 +37,12 @@ Organise imports                       Opt-Shift-O
 
 Join lines                             Ctrl-J
 
-Delete line                            Cmd-Shift-K (Mac) / Ctrl-Shift-K (Linux)
+Delete line                            Cmd-Shift-K
 
 Start new line below                   Cmd-Enter
 Start new line above                   Cmd-Shift-Enter
 
-Move line up/down                      Opt-Up/Down (Mac) / Alt-Up/Down (Linux)
+Move line up/down                      Opt-Up/Down
 
 Toggle line comment                    Cmd-/
 Toggle block comment                   Shift-Opt-A
@@ -56,7 +56,7 @@ Insert line above                      Cmd-Shift-Enter
 
 # Selection
 
-Select word under cursor               Cmd-D (Mac) / Ctrl-D (Linux)
+Select word under cursor               Cmd-D
 aka Add Selection To Next Find Match
 
 Select all occurrences of selection    Cmd-Shift-L
@@ -75,18 +75,21 @@ Go forward                             Ctrl-Shift-Minus
 Go to definition                       F12
 Peek references                        F12
 
-Scroll file up/down                    Ctrl-PageUp/Down aka Ctrl-Fn-Up/Down (Mac)
+Scroll file up/down                    Ctrl-PageUp/Down aka Ctrl-Fn-Up/Down
 
 Go to line                             Ctrl-G
 
 Top/bottom of file                     Cmd-Up/Down (unlike Fn-Cmd-Left/Right in other editors)
+
+Keep current file open                 Ctrl-K Enter
 
 
 
 # Searching
 
 Search in window                       Cmd-F
-Replace in window                      Cmd-Opt-F (Mac) / Ctrl-H (Linux)
+Replace in window                      Cmd-Opt-F
+Repeat search                          Cmd-G
 
 Open text search                       Cmd-Shift-F
 Focus next search result               F4

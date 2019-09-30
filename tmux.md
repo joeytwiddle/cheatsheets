@@ -1,6 +1,31 @@
+# Starting tmux
+
+Rejoin an existing tmux session:
+
+```bash
+tmux a
+```
+
+Or if there isn't an existing session, you can start a new one:
+
+```bash
+tmux
+```
+
+# Keybinds
+
+Hit the prefix key (Ctrl-B by default) before using one of the keybinds below.
+
+So, to see the help, press `Ctrl-B` and then `?`
+
 # Help
 
-    tmux list-keys         (show all keybindings)
+    ? list-keys            (show all keybindings)
+    q leave help page
+
+You can also run from the command line, inside or outside of tmux:
+
+    tmux list-keys
 
 # Create windows
 
@@ -10,9 +35,9 @@
 
 # Navigate windows
 
-    l last-window
     n next-window
-    p previous-window
+    p previous-window      (in list)
+    l last-window          (you were focused on)
     w choose-window        (from list)
     x confirm-before -p "kill-pane #P? (y/n)" kill-pane
     0 select-window -t :0
@@ -22,6 +47,7 @@
         prompts for new window position (but will only move to empty spot)
 
     :swap-window -t <target_window>
+        use -1 for target_window to swap this window with the window to its left
 
 # Navigate panes
 
@@ -35,7 +61,22 @@
     -r    Down select-pane -D
     -r    Left select-pane -L
     -r   Right select-pane -R
+
+# Navigate panes
+
     ! break-pane           (current pane breaks out into a new window)
+
+To pull another window here:
+
+    :join-pane -s <other_window_number>
+
+You can use `!` to refer to the previous focused window.
+
+Or to push the current pane somewhere:
+
+    :join-pane -t <target_window_numer:target_pane_number>
+
+This will place your current pane below the existing pane at `target_pane_number`.  Since pane numbers are zero-indexed, to place your pane last, use the number of panes minus 1 as the `target_pane_number`.
 
 # Disconnecting and getting back
 
@@ -43,11 +84,22 @@
     ) switch-client -n
     d detach-client
 
-# Search (in copy mode)
+# Search (when in copy mode)
 
-    C-s search down (with Emacs key bindings, the default)
-    n repeat search forwards
-    N repeat search backwards
+With Emacs key bindings (the default):
+
+    C-s search forwards
+    C-r search backwards
+
+Or with vi keybindings (`set-window-option -g mode-keys vi`):
+
+    / search forwards
+    ? search backwards
+
+And then:
+
+    n jump to next match
+    N jump to previous match
 
 # More
 
@@ -97,9 +149,28 @@
 
 # Rename a window
 
+First we may need to disable the automatic renaming that tmux/xttitle does for us.
+
 ```bash
-set-option -g allow-rename off
+tmux set-option -g allow-rename off
+```
+
+Now you can rename a window with
+
+```
+<Prefix> ,
+```
+
+or with:
+
+```
 tmux rename-window <new_title>
+```
+
+# Make the currently selected window stand out
+
+```
+<Prefix>:set-window-option -g window-status-current-bg yellow
 ```
 
 # Sharing
