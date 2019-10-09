@@ -52,3 +52,12 @@ du -sh "$(nvm cache dir)"
 du -sh "$NVM_DIR"/.cache
 nvm cache clear
 ```
+
+You can also remove some `node_modules` from old projects:
+```bash
+cd
+# Quickly regain some space
+npx npkill -s size
+# Go through the filesystem thoroughly
+npx npkill
+```

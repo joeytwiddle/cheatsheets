@@ -40,5 +40,28 @@ For packages from the wider community, we need to connect to AUR.  There are mul
   - It requires slightly less interaction: `n` instead of `n<Enter>`
 
 
+# Clean cache
+
+Safe: This will remove archived packages, all except the last 3 versions.
+
+```
+du -sh /var/cache/pacman/pkg
+sudo paccache -r
+```
+
+Medium: This will clear all except currently installed versions.
+
+```
+sudo pacman -Sc
+```
+
+Heavy: Remove all cached packages.
+
+```
+sudo pacman -Scc
+```
+
+You could also automate the cleaning some pacman hooks: https://www.ostechnix.com/recommended-way-clean-package-cache-arch-linux/
+
 
 [1] https://wiki.manjaro.org/index.php?title=System_Maintenance

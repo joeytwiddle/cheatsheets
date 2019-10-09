@@ -1,15 +1,24 @@
 # The basics
-# To measure the size of a folder, use
+# Measure the size of a folder:
 #du -sh <folder_name>
-# To compare the sizes of multiple folders, use
+# See the sizes of all the folders in the current directory:
 #du -sk * | sort -n -k 1
 
 
 
 # NPM and Yarn
+
+# Caches
 # If you use npm or yarn, and you don't mind it being slow the next time you run it
 npm cache clean
 yarn cache clean
+
+# To clear old node_modules folders
+#cd
+# Quickly regain some space
+#npx npkill -s size
+# Go through the filesystem thoroughly
+#npx npkill
 
 
 
@@ -43,3 +52,10 @@ rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
 # Archives of apps you have built
 #rm -rf ~/Library/Developer/Xcode/Archives/*
+
+
+
+# Cordova
+
+rm -rf ~/.cordova/lib/tmp
+rm -rf ~/.cordova/lib/npm_cache
