@@ -56,8 +56,8 @@ nvm cache clear
 You can also remove some `node_modules` from old projects:
 ```bash
 cd
-# Quickly regain some space
+# Largest first (quick)
 npx npkill -s size
-# Go through the filesystem thoroughly
+# Alphabetically (thorough)
 npx npkill
 ```

@@ -17,14 +17,16 @@ docker run hello-world
 # List downloaded images (these take disk space)
 ```bash
 docker image ls
+# or just
+docker images
 ```
 
 # List containers (including stopped containers)
 ```bash
 docker container ls --all
+# or just
+docker ps -a
 ```
-
-I think `docker ps` is a shortcut for `docker container ls`.
 
 Add `--size` to see how much space each container is taking.
 
@@ -106,13 +108,13 @@ docker builder prune
 
 # Remove ALL docker containers and images
 
-WARNING: This will destroy everything (except for running containers)
+WARNING: This will destroy everything apart from running containers and their images
 
 ```bash
 docker system prune --all
 ```
 
-WARNING: This will destroy everything!
+WARNING: This will destroy absolutely everything, including running containers!
 
 ```bash
 docker stop $(docker ps -q)
@@ -145,21 +147,19 @@ In this case we have used `--rm` (optional) to automatically remove the containe
 
 # Enter a docker container to debug
 
-It is usually easier to enter an image than enter a container.
-
 If your container has stopped, you must first restart it.
 
 ```bash
 docker restart <container_name>
 ```
 
-Now you can debug it:
+Now you can open a shell inside the container, to debug it:
 
 ```bash
 docker exec -it <container_name> /bin/bash
 ```
 
-If you want to enter the container as the root user, add `-u root`
+Some images set a default user.  If you want to enter the container as the root user, add `-u root`
 
 # Install some useful debugging tools
 

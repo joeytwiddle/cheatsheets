@@ -18,6 +18,8 @@ Focus explorer / editor                Ctrl-Shift-E
 Focus sidebar                          
 Focus in/out of terminal               Ctrl-`
 
+More terminal shortcuts here: https://www.mcieslar.com/learn-these-keyboard-shortcuts-to-become-a-vs-code-ninja
+
 Toggle panel below editor              Ctrl-J
 Toggle sidebar panel                   Ctrl-B
 
@@ -25,6 +27,14 @@ Save All
 
 Open settings                          
 Open keyboard shortcuts                
+
+Switch Window (between projects)       
+Open Recent (project)                  
+
+New Window                             
+Close Window                           
+
+Change focus to a different panel      
 
 
 
@@ -63,7 +73,9 @@ Select all occurrences of selection
 (useful for renaming something)
 Select all occurrences of word         
 
-Stretch cursor up/down                 
+Expand/shrink selection                Cmd-Ctrl-Shift-Right/Left
+
+Stretch vertical cursor up/down        Alt-Shift-Right/Left
 
 
 
@@ -72,8 +84,9 @@ Stretch cursor up/down
 Go back                                
 Go forward                             
 
-Go to definition                       
-Peek references                        
+Go to Definition                       
+Peek References                        
+Find All References                    
 
 Scroll file up/down                    
 
@@ -91,18 +104,38 @@ Search in window                       Ctrl-F
 Replace in window                      Ctrl-H
 Repeat search                          Ctrl-G
 
-Open text search                       
+Search in files                        
 Focus next search result               
 Focus previous search result           
 
-Open text replace                      
-Confirm replace all                    
+Replace in files                       
+
+Apply the current replacement (one)    
+Remove the current replacement (one)   
+Apply all the replacements             
 
 Toggle case sensitive                  
 Toggle match whole word                
 Toggle regular expression              
 
-Apply all the replacements             
-Remove the current replacement (one)   
-Apply the current replacement (one)    
 
+
+# Splitting windows
+
+Split Editor Right                     
+Split Editor Down                      
+Focus sidebar / split 1 / split 2      
+Split Open from dropdown menu          
+
+
+
+# Advanced
+
+Quick Fix...                           Ctrl-.
+Auto Fix...                            
+
+Show intellisense for focused code     Ctrl-K Ctrl-I
+
+Show details of error under cursor     F8
+
+Refactor                               

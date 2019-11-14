@@ -15,9 +15,9 @@ yarn cache clean
 
 # To clear old node_modules folders
 #cd
-# Quickly regain some space
+# Largest first (quick)
 #npx npkill -s size
-# Go through the filesystem thoroughly
+# Alphabetically (thorough)
 #npx npkill
 
 

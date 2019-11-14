@@ -18,6 +18,8 @@ Focus explorer / editor                Cmd-Shift-E
 Focus sidebar                          Cmd-0 (zero)
 Focus in/out of terminal               Ctrl-backtick
 
+More terminal shortcuts here: https://www.mcieslar.com/learn-these-keyboard-shortcuts-to-become-a-vs-code-ninja
+
 Toggle panel below editor              Cmd-J
 Toggle sidebar panel                   Cmd-B
 
@@ -25,6 +27,14 @@ Save All                               Cmd-Opt-S
 
 Open settings                          Cmd-,
 Open keyboard shortcuts                Cmd-K Cmd-S
+
+Switch Window (between projects)       Ctrl-W
+Open Recent (project)                  Ctrl-R   (hold Cmd when selecting, to open in a new window)
+
+New Window                             Cmd-Shift-N
+Close Window                           Cmd-Shift-W
+
+Change focus to a different panel      Ctrl-Q
 
 
 
@@ -63,7 +73,9 @@ Select all occurrences of selection    Cmd-Shift-L
 (useful for renaming something)
 Select all occurrences of word         Cmd-F2
 
-Stretch cursor up/down                 Cmd-Opt-Up/Down
+Expand/shrink selection                Cmd-Ctrl-Shift-Right/Left
+
+Stretch vertical cursor up/down        Cmd-Opt-Up/Down
 
 
 
@@ -72,8 +84,9 @@ Stretch cursor up/down                 Cmd-Opt-Up/Down
 Go back                                Ctrl-Minus
 Go forward                             Ctrl-Shift-Minus
 
-Go to definition                       F12
-Peek references                        F12
+Go to Definition                       F12
+Peek References                        Shift-F12
+Find All References                    Opt-Shift-F12 (opens a list of references in the sidebar)
 
 Scroll file up/down                    Ctrl-PageUp/Down aka Ctrl-Fn-Up/Down
 
@@ -91,18 +104,38 @@ Search in window                       Cmd-F
 Replace in window                      Cmd-Opt-F
 Repeat search                          Cmd-G
 
-Open text search                       Cmd-Shift-F
+Search in files                        Cmd-Shift-F
 Focus next search result               F4
 Focus previous search result           Shift-F4
 
-Open text replace                      Cmd-Shift-H
-Confirm replace all                    Cmd-Opt-Enter
+Replace in files                       Cmd-Shift-H
+
+Apply the current replacement (one)    Cmd-Shift-1
+Remove the current replacement (one)   Cmd-Delete
+Apply all the replacements             Cmd-Opt-Enter
 
 Toggle case sensitive                  Cmd-Opt-C (inside search)
 Toggle match whole word                Cmd-Opt-W (inside search)
 Toggle regular expression              Cmd-Opt-R (inside search)
 
-Apply all the replacements             Cmd-Opt-Enter
-Remove the current replacement (one)   Cmd-Delete
-Apply the current replacement (one)    Cmd-Shift-1
 
+
+# Splitting windows
+
+Split Editor Right                     Cmd-\
+Split Editor Down                      Cmd-K Cmd-\
+Focus sidebar / split 1 / split 2      Cmd-0 / Cmd-1 / Cmd-2
+Split Open from dropdown menu          Cmd-\
+
+
+
+# Advanced
+
+Quick Fix...                           Cmd-.
+Auto Fix...                            Cmd-Opt-.
+
+Show intellisense for focused code     Cmd-K Cmd-I
+
+Show details of error under cursor     F8
+
+Refactor                               Ctrl-Shift-R

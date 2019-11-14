@@ -1,12 +1,20 @@
+# Installing
+
 Install package: `pacman -S <package_name>`
 
-Install package without prompting: `pacman -Sy <package_name>`
+Install package and also sync package databases: `pacman -Sy <package_name>`
+
+# Updating
+
+Update lists: `pacman -Sy`
 
 Although the wiki recommends:
 
 > Avoid using `pacman -Sy` or `pacman -Syy`.  Instead update your database and packages at the same time with `pacman -Syu` or `pacman -Syyu`
 
-Update lists: `pacman -Sy`
+(Unlike Debian, it would appear that when we install a package with pacman, it checks that the dependencies are installed, but it does not check for the correct versions of those dependencies.  It rather assumes that the latest version is installed.)
+
+#
 
 Remove a package: `pacman -R`
 

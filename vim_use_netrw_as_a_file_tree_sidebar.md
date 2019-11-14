@@ -28,11 +28,9 @@ You can change focus between windows using:
       or
     CTRL-W h/j/k/l
 
-You can expand or shrink the current window with:
+You can set the width of the current window with:
 
-    30 CTRL-W >
-
-    5 CTRL-W <
+    120 CTRL-W |
 
 Now focus back on the netrw explorer.
 
