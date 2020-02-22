@@ -1,0 +1,9 @@
+1. The classic callback function.  (With node variant `(error, data)`)
+
+2. Promises
+
+3. Attach an event listener with `.on('something' ...)`, for example `thingIJustLoggedInto.on('login', ...);`
+
+   Similarly, attaching an event handler but with the classic DOM API: `element.addEventListener(...)`
+
+4. Receiving data from Node streams or from rxjs streams.
