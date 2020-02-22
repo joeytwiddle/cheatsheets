@@ -12,6 +12,13 @@ Or if there isn't an existing session, you can start a new one:
 tmux
 ```
 
+To rejoin one of multiple running sessions:
+
+```bash
+tmux list-sessions
+tmux a -t <target-session>
+```
+
 # Keybinds
 
 Hit the prefix key (Ctrl-B by default) before using one of the keybinds below.
@@ -66,7 +73,7 @@ You can also run from the command line, inside or outside of tmux:
 
     ! break-pane           (current pane breaks out into a new window)
 
-To pull another window here:
+To pull/bring another window here:
 
     :join-pane -s <other_window_number>
 
@@ -77,6 +84,14 @@ Or to push the current pane somewhere:
     :join-pane -t <target_window_numer:target_pane_number>
 
 This will place your current pane below the existing pane at `target_pane_number`.  Since pane numbers are zero-indexed, to place your pane last, use the number of panes minus 1 as the `target_pane_number`.
+
+Alternatively, mark a pane with:
+
+    :select-pane -m
+
+And then bring the marked pane with:
+
+    :join-pane
 
 # Disconnecting and getting back
 
@@ -199,4 +214,7 @@ Before doing that you may like to list the windows from that session
 
     list-windows -t [other_session_id]
 
+# Send the same keystrokes to all visible panes
+
+    setw synchronize-panes on
 

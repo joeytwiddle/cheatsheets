@@ -10,7 +10,9 @@
 
 # Caches
 # If you use npm or yarn, and you don't mind it being slow the next time you run it
+# ~/.npm/_cacache/
 npm cache clean
+# "$(yarn cache dir)"
 yarn cache clean
 
 # To clear old node_modules folders
@@ -24,6 +26,7 @@ yarn cache clean
 
 # NVM (node version manager)
 # The cache is not usually very big
+# ~/.nvm/.cache/
 nvm cache clear
 # You can list all installed versions
 #nvm ls
@@ -59,3 +62,10 @@ rm -rf ~/Library/Developer/Xcode/DerivedData/*
 
 rm -rf ~/.cordova/lib/tmp
 rm -rf ~/.cordova/lib/npm_cache
+rm -rf ~/.gradle
+
+
+
+# Android development
+## Virtual devices for the emulator
+rm -rf ~/.android/avd/*

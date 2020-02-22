@@ -10,6 +10,11 @@ npm info <package_name> versions
 yarn info <package_name> versions
 ```
 
+### When were different versions of this package released?
+```bash
+npm view <package_name> time [--json]
+```
+
 ### What are the dependencies of this package?
 ```bash
 yarn info <package_name> dependencies

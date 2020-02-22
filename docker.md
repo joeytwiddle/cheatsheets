@@ -133,8 +133,10 @@ docker run --detach --name <container_name> <image_name>
 
 # Start a docker container in interactive mode
 
+If you want to interact with the process that the image starts up with.
+
 ```bash
-docker run -ti --name <container_name> <image_name>
+docker run -it <image_name>
 ```
 
 # Enter a docker image to debug
@@ -144,6 +146,12 @@ docker run --rm -it <image_id> /bin/bash
 ```
 
 In this case we have used `--rm` (optional) to automatically remove the container when it stops.
+
+Note that the above may not work if the Docker image has specified an entrypoint.  In such cases, we may need to override the entrypoint like so:
+
+```
+docker run --rm -it --entrypoint /bin/bash <image_id>
+```
 
 # Enter a docker container to debug
 
@@ -244,3 +252,9 @@ but note that in this case the image is not layered, so it will take the full si
 - [nsenter](https://github.com/jpetazzo/nsenter) - Easy way to start a shell inside a container (although `docker exec` has now taken its place).  Includes `docker-enter`.
 
 - [baseimage](http://phusion.github.io/baseimage-docker/) - A Docker image designed to run a full Linux system, rather than just one process.  (syslog, cron, ssh, logrotate, ...)
+
+
+
+# See also
+
+- Recommendations for creating images: https://developers.redhat.com/blog/2016/02/24/10-things-to-avoid-in-docker-containers/

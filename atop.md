@@ -12,6 +12,11 @@ or open the day before yesterday's logfile:
 
     atop -r yy
 
+or open a specific date:
+
+    cd /var/log/atop
+    atop -r atop_20130927
+
 Then jump forwards and backwards in time with <kbd>t</kbd> and <kbd>T</kbd> respectively.
 
 Use <kbd>b</kbd> then `16:20` to jump to a specific time.

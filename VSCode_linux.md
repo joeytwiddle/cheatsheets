@@ -31,7 +31,9 @@ Open keyboard shortcuts
 Switch Window (between projects)       
 Open Recent (project)                  
 
-New Window                             
+New File                               Ctrl-N
+
+New Window                             Ctrl-Shift-N
 Close Window                           
 
 Change focus to a different panel      
@@ -49,8 +51,8 @@ Join lines
 
 Delete line                            Ctrl-Shift-K
 
-Start new line below                   
-Start new line above                   
+Start new line below                   Ctrl-Enter
+Start new line above                   Ctrl-Shift-Enter
 
 Move line up/down                      Alt-Up/Down
 
@@ -68,6 +70,7 @@ Insert line above
 
 Select word under cursor               Ctrl-D
 aka Add Selection To Next Find Match
+Cursor Undo (reverse last Ctrl-D)      Ctrl-U
 
 Select all occurrences of selection    
 (useful for renaming something)
@@ -94,7 +97,12 @@ Go to line
 
 Top/bottom of file                     
 
-Keep current file open                 Cmd-K Enter
+Keep current file open                 Ctrl-K Enter
+                                       or
+                                       Ctrl-S
+
+Focus breadcrumbs                      
+Navigate next/previous in breadcrumbs  
 
 
 
@@ -105,8 +113,8 @@ Replace in window                      Ctrl-H
 Repeat search                          Ctrl-G
 
 Search in files                        
-Focus next search result               
-Focus previous search result           
+Focus next search result               F4
+Focus previous search result           Shift-F4
 
 Replace in files                       
 
@@ -118,6 +126,8 @@ Toggle case sensitive
 Toggle match whole word                
 Toggle regular expression              
 
+Toggle extra search options            Ctrl-Shift-J
+
 
 
 # Splitting windows
@@ -126,6 +136,19 @@ Split Editor Right
 Split Editor Down                      
 Focus sidebar / split 1 / split 2      
 Split Open from dropdown menu          
+
+
+
+# Fold code
+
+Unfold All                             
+Fold to Level 2                        
+Fold                                   
+Unfold                                 
+Fold recursively                       
+Unfold recursively                     
+
+(Note when folding, your cursor may need to be outside the area to be folded.)
 
 
 
@@ -139,3 +162,9 @@ Show intellisense for focused code     Ctrl-K Ctrl-I
 Show details of error under cursor     F8
 
 Refactor                               
+
+Specific sidebar                       Ctrl-Shift-E
+                                       Ctrl-Shift-F
+                                       Ctrl-Shift-G
+                                       Ctrl-Shift-D
+                                       Ctrl-Shift-X

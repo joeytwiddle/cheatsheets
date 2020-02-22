@@ -31,6 +31,8 @@ Open keyboard shortcuts                Cmd-K Cmd-S
 Switch Window (between projects)       Ctrl-W
 Open Recent (project)                  Ctrl-R   (hold Cmd when selecting, to open in a new window)
 
+New File                               Cmd-N
+
 New Window                             Cmd-Shift-N
 Close Window                           Cmd-Shift-W
 
@@ -68,6 +70,7 @@ Insert line above                      Cmd-Shift-Enter
 
 Select word under cursor               Cmd-D
 aka Add Selection To Next Find Match
+Cursor Undo (reverse last Cmd-D)       Cmd-U
 
 Select all occurrences of selection    Cmd-Shift-L
 (useful for renaming something)
@@ -94,13 +97,18 @@ Go to line                             Ctrl-G
 
 Top/bottom of file                     Cmd-Up/Down (unlike Fn-Cmd-Left/Right in other editors)
 
-Keep current file open                 Ctrl-K Enter
+Keep current file open                 Cmd-K Enter
+                                       or
+                                       Cmd-S
 
+Focus breadcrumbs                      Cmd-Shift-.
+Navigate next/previous in breadcrumbs  Ctrl+N / Ctrl+P
 
 
 # Searching
 
 Search in window                       Cmd-F
+Search with word under cursor          Cmd-E         (called Find With Selection)
 Replace in window                      Cmd-Opt-F
 Repeat search                          Cmd-G
 
@@ -110,13 +118,15 @@ Focus previous search result           Shift-F4
 
 Replace in files                       Cmd-Shift-H
 
-Apply the current replacement (one)    Cmd-Shift-1
+Apply the current replacement (one)    Cmd-Shift-1 (Cmd-!)
 Remove the current replacement (one)   Cmd-Delete
 Apply all the replacements             Cmd-Opt-Enter
 
 Toggle case sensitive                  Cmd-Opt-C (inside search)
 Toggle match whole word                Cmd-Opt-W (inside search)
 Toggle regular expression              Cmd-Opt-R (inside search)
+
+Toggle extra search options            Cmd-Shift-J
 
 
 
@@ -126,6 +136,20 @@ Split Editor Right                     Cmd-\
 Split Editor Down                      Cmd-K Cmd-\
 Focus sidebar / split 1 / split 2      Cmd-0 / Cmd-1 / Cmd-2
 Split Open from dropdown menu          Cmd-\
+Close All Editors In Group             Cmd-K W
+
+
+
+# Fold code
+
+Unfold All                             Cmd-K Cmd-J
+Fold to Level 2                        Cmd-K Cmd-2
+Fold                                   Cmd-Opt-[
+Unfold                                 Cmd-Opt-]
+Fold recursively                       Cmd-K [
+Unfold recursively                     Cmd-K ]
+
+(Note when folding, your cursor may need to be outside the area to be folded.)
 
 
 
@@ -139,3 +163,9 @@ Show intellisense for focused code     Cmd-K Cmd-I
 Show details of error under cursor     F8
 
 Refactor                               Ctrl-Shift-R
+
+Specific sidebar                       Cmd-Shift-E
+                                       Cmd-Shift-F
+                                       Cmd-Shift-G
+                                       Cmd-Shift-D
+                                       Cmd-Shift-X
