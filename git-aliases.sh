@@ -41,3 +41,34 @@ alias gssp='git stash --patch'
 alias gssk='git stash --patch && git stash drop'
 # This is safer than `git reset --hard` because if you did accidentally kill
 # something you wanted, recovery is possible from `git reflog`
+
+# Fixup a past commit.  This will amend the given commit with whatever you have staged.
+#
+# For example, to stage some changes and add them to the commit two places before the latest commit.
+#
+#     git add -p
+#
+#     git log --oneline
+#
+#     gcf HEAD~~
+#
+git_commit_immediate_fixup() {
+  local commit_to_amend="$1"
+  if [ -z "$commit_to_amend" ]
+  then
+    echo "You must provide a commit to fixup!"
+    return
+  fi
+
+  # We need a static commit ref in case the commit is something relative like HEAD~
+  commit_to_amend="$(git rev-parse "${commit_to_amend}")" || return
+
+  echo ">> Committing"
+  git commit --no-verify --fixup "${commit_to_amend}" || return
+
+  echo ">> Performing rebase"
+  # --autosquash requires -i, but we can avoid interaction with a dummy EDITOR
+  EDITOR=true git rebase --interactive --autosquash --autostash \
+                         --preserve-merges "${commit_to_amend}~"
+}
+alias gcf='git_commit_immediate_fixup'
