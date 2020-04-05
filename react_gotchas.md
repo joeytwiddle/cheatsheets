@@ -1,5 +1,7 @@
 # React
 
+This file only lists one gotcha.  For a more complete list, see: https://gist.github.com/joeytwiddle/8634b729a50b816762f78aa545fbd72f
+
 ## this.setState() is asynchronous
 
 TLDR: Do not refer to `this.state` when calling `this.setState()`.  Pass a function to setState instead.
