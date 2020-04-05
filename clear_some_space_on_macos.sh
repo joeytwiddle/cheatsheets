@@ -1,8 +1,12 @@
 # The basics
+#
 # Measure the size of a folder:
-#du -sh <folder_name>
+#
+#     du -sh <folder_name>
+#
 # See the sizes of all the folders in the current directory:
-#du -sk * | sort -n -k 1
+#
+#     du -sk * | sort -n -k 1
 
 
 
@@ -69,3 +73,15 @@ rm -rf ~/.gradle
 # Android development
 ## Virtual devices for the emulator
 rm -rf ~/.android/avd/*
+
+
+
+# Docker
+# Clear stopped containers and caches
+docker system prune -f
+# Remove all images and volumes except those used by running containers
+#docker system prune --all
+#
+# Also check /var/lib/docker/volumes
+# Some images store data here
+# E.g. the mongo image with no arguments kept creating fresh new databases here, but never reusing them!

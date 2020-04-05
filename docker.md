@@ -123,6 +123,12 @@ docker container rm $(docker ps -a -q)
 docker image rm -f $(docker images -a -q)
 ```
 
+Actually it might not destroy all volumes.  Check:
+
+```bash
+du -sh /var/lib/docker/volumes
+```
+
 # Start a named docker container
 
 If you give your container a name when you start it, it will be easier to find it later.
