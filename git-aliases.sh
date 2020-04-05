@@ -12,9 +12,16 @@ alias ga='git add'
 # This shows what you have staged so far
 alias gdc='git diff --cached'
 alias gc='git commit'
+# Change the commit message
+alias gca='git commit --amend'
+# Add changes to the last commit, without editing the message
+alias gcane='git commit --amend --no-edit'
 
 alias gb='git branch -v'
 alias gbr='git branch -v --remote'
+# List branches sorted by date (useful to see the most recent local or remote branches)
+alias gbd='git for-each-ref --sort=committerdate $target --format="%(refname:short)$(echo -e \"\\t\")%(committerdate:relative) (%(authorname)) %(subject)" | column -t -s "$(echo -e \"\\t\")"'
+alias gbdr='gbd -r'
 alias gco='git checkout'
 
 alias gfo='git fetch origin'
