@@ -4,7 +4,7 @@
 #
 #     du -sh <folder_name>
 #
-# See the sizes of all the folders in the current directory:
+# See the sizes of all the folders in the current directory (can take some time):
 #
 #     du -sk * | sort -n -k 1
 
