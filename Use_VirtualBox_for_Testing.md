@@ -47,7 +47,7 @@ The next time we start the machine, we don't want to wait while it boots up.  It
 
    This folder corresponds to `vagrant_win2012/` on your host machine (the first folder you created).
 
-   (This is actually the state of the virtual machine which I like to snapshot.)
+   (I like to make a shortcut to this folder, and save that in a Snapshot.)
 
 2. On your host machine, drop a file into `vagrant_win2012/`.
 
