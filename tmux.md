@@ -161,25 +161,27 @@ And then:
 
     , rename-window
 
+# Some basics I like to do
 
-# Rename a window
+Make the currently selected window stand out with a brighter background:
 
-First we may need to disable the automatic renaming that tmux/xttitle does for us.
+```
+<Prefix> :set-window-option -g window-status-current-bg white
+```
+
+Name each window, to assist navigation:
+
+```
+<Prefix> , config
+<Prefix> , logs
+# or
+tmux rename-window <new_title>
+```
+
+If the window keeps renaming itself, you may need to disable this option:
 
 ```bash
 tmux set-option -g allow-rename off
-```
-
-Now you can rename a window with
-
-```
-<Prefix> ,
-```
-
-or with:
-
-```
-tmux rename-window <new_title>
 ```
 
 # Make the currently selected window stand out
