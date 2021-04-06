@@ -1,3 +1,7 @@
+## Abstract
+
+This is a guide for developers on macOS or Linux who need to test a Windows app they have built.
+
 ## Prerequisites
 
 Install vagrant and VirtualBox
@@ -9,11 +13,13 @@ mkdir vagrant_win2012
 cd vagrant_win2012
 
 # Download the image
-# Need 5GB disk space
+# You may of course choose to install a different Windows image from here:
+# https://app.vagrantup.com/boxes/search
+# This one needs 5GB disk space
 vagrant init opentable/win-2012r2-standard-amd64-nocm
 
 # Start it running
-# Need 10GB disk space
+# Needs 10GB disk space
 vagrant up
 ```
 
