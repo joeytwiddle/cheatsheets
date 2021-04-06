@@ -38,13 +38,11 @@ If you want to open another file, `v` would create another split, giving you thr
 
 If you opened a third pane by accident, you could use `CTRL-W c` to close the currently focused pane.
 
-Now let's do it the right way.
-
-To open another file but **re-use the same window**, hover over the file and hit:
+Now let's do it the right way.  To open another file but _re-use the same window_, hover over the file and hit:
 
     P
 
-Here `P` refers to the "previously focused" window.
+This instructs Vim to open the file in the "previously focused" window.
 
 If you ever accidentally hit `Enter` to try to open a file, the file explorer will disappear and the pane will become an editor pane!  But you can easily get the file explorer back by hitting Vim's "back button":
 
@@ -102,7 +100,7 @@ I think it's better to train muscle memory to use `v` and `P` so when faced with
 
 
 
-# Moving files
+# Moving files in netrw
 
 If you want to move some files to a different folder, first mark each file with:
 
