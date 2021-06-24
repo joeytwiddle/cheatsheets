@@ -13,6 +13,8 @@ Open command palette                   Cmd-Shift-P
 Open file picker                       Cmd-P
 Switch to previous file                Cmd-P Cmd-P...
 Go to symbol                           Cmd-T
+Go to Symbol in Editor                 Cmd-Shift-O
+Go to Symbol in Editor (grouped)       Cmd-Shift-O :
 
 Focus explorer / editor                Cmd-Shift-E
 Focus sidebar                          Cmd-0 (zero)

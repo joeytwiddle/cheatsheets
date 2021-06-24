@@ -83,6 +83,8 @@ service docker restart
 
 ## Short way
 
+Cleans up unused caches and stopped containers.
+
 ```bash
 docker system prune -f
 ```

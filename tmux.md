@@ -19,6 +19,57 @@ tmux list-sessions
 tmux a -t <target-session>
 ```
 
+# Some basics I like to do after starting a vanilla tmux
+
+You can just copy-paste this into your terminal, once you are inside tmux.
+
+```bash
+# Make the currently selected window stand out with a brighter background
+tmux set-window-option -g window-status-current-bg white
+
+# Navigate between windows and panes with Shift-ArrowKeys
+tmux bind-key -n S-Left select-window -t -1
+tmux bind-key -n S-Right select-window -t +1
+tmux bind-key -n S-Up select-pane -U
+tmux bind-key -n S-Down select-pane -D
+
+# Move current window with Ctrl-Shift-Arrow-Keys (newer version of tmux)
+tmux bind-key -n C-S-Left swap-window -t -1
+tmux bind-key -n C-S-Right swap-window -t +1
+# Move current window with Ctrl-Shift-Arrow-Keys (older version of tmux)
+tmux bind-key -n C-S-Left swap-window -t -1 '\;' select-window -t -1
+tmux bind-key -n C-S-Right swap-window -t +1 '\;' select-window -t +1
+```
+
+To make things clearer, I sometimes like to name each window:
+
+```bash
+<Prefix> , config
+<Prefix> , logs
+# or
+tmux rename-window <new_title>
+```
+
+If the window keeps renaming itself, you may need to disable this option:
+
+```bash
+tmux set-option -g allow-rename off
+```
+
+# How to search (default mode)
+
+1. Hit `<Prefix> [` to start copy/scroll mode
+2. Hit `<Ctrl-R>` to search backwards, or
+2. Hit `<Ctrl-S>` to search forwards (may jump up to the top)
+3. To repeat search, you can hit `n` or `N` for the reverse direction
+
+# How to copy and paste (default mode)
+
+1. Hit `<Prefix> [` to start copy/scroll mode
+2. Find the start of your selection and hit `<Ctrl-Space>`
+3. Find the end of your selection and hit `<Alt-W>` or `<Ctrl-W>`
+4. Go to the pane or window where you want to paste, and hit `<Prefix> ]` to paste
+
 # Keybinds
 
 Hit the prefix key (Ctrl-B by default) before using one of the keybinds below.
@@ -98,6 +149,7 @@ And then bring the marked pane with:
     ( switch-client -p
     ) switch-client -n
     d detach-client
+    D detach another client
 
 # Search (when in copy mode)
 
@@ -160,35 +212,6 @@ And then:
     -r C-Right resize-pane -R
 
     , rename-window
-
-# Some basics I like to do
-
-Make the currently selected window stand out with a brighter background:
-
-```
-<Prefix> :set-window-option -g window-status-current-bg white
-```
-
-Name each window, to assist navigation:
-
-```
-<Prefix> , config
-<Prefix> , logs
-# or
-tmux rename-window <new_title>
-```
-
-If the window keeps renaming itself, you may need to disable this option:
-
-```bash
-tmux set-option -g allow-rename off
-```
-
-# Make the currently selected window stand out
-
-```
-<Prefix>:set-window-option -g window-status-current-bg yellow
-```
 
 # Sharing
 

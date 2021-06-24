@@ -8,6 +8,8 @@
 #
 #     du -sk * | sort -n -k 1
 
+# For Linux, see: stacer (logs and app caches) and bleachbit (cookies and journalctl)
+# For Linux: rm -rf ~/.cache
 
 
 # NPM and Yarn

@@ -13,6 +13,8 @@ Open command palette                   Ctrl-Shift-P
 Open file picker                       Ctrl-P
 Switch to previous file                Ctrl-P Ctrl-P...
 Go to symbol                           Ctrl-T
+Go to Symbol in Editor                 Ctrl-Shift-O
+Go to Symbol in Editor (grouped)       Ctrl-Shift-O :
 
 Focus explorer / editor                Ctrl-Shift-E
 Focus sidebar                          

@@ -47,6 +47,8 @@ Why?  We don't want the remember/store the _current_ messy state of the machine,
 
 The next time we start the machine, we don't want to wait while it boots up.  It will start immediately in the snapshot state, which is faster than a full boot.
 
+(You can manage snapshots from the ≡ menu by each machine in the main VirtualBox Manager window.)
+
 ## Use the machine for testing
 
 1. Open the virtual machine.  Open the File Manager and navigate to `Network > \\VBOXSVR\Vagrant`.
