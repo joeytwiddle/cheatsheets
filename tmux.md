@@ -19,13 +19,15 @@ tmux list-sessions
 tmux a -t <target-session>
 ```
 
-# Some basics I like to do after starting a vanilla tmux
+# Some basics I like to do after starting a new tmux session
 
 You can just copy-paste this into your terminal, once you are inside tmux.
 
 ```bash
 # Make the currently selected window stand out with a brighter background
-tmux set-window-option -g window-status-current-bg white
+#tmux set-window-option -g window-status-current-bg white
+tmux set-window-option -g window-status-current-bg colour255
+tmux set-window-option -g window-status-current-fg colour16
 
 # Navigate between windows and panes with Shift-ArrowKeys
 tmux bind-key -n S-Left select-window -t -1
@@ -36,12 +38,16 @@ tmux bind-key -n S-Down select-pane -D
 # Move current window with Ctrl-Shift-Arrow-Keys (newer version of tmux)
 tmux bind-key -n C-S-Left swap-window -t -1
 tmux bind-key -n C-S-Right swap-window -t +1
+
 # Move current window with Ctrl-Shift-Arrow-Keys (older version of tmux)
-tmux bind-key -n C-S-Left swap-window -t -1 '\;' select-window -t -1
-tmux bind-key -n C-S-Right swap-window -t +1 '\;' select-window -t +1
+#tmux bind-key -n C-S-Left swap-window -t -1 '\;' select-window -t -1
+#tmux bind-key -n C-S-Right swap-window -t +1 '\;' select-window -t +1
+
+# Since I like to name my windows, I prefer to turn this off
+tmux set-option -g allow-rename off
 ```
 
-To make things clearer, I sometimes like to name each window:
+To make things clearer, I like to name each window:
 
 ```bash
 <Prefix> , config
@@ -50,10 +56,28 @@ To make things clearer, I sometimes like to name each window:
 tmux rename-window <new_title>
 ```
 
-If the window keeps renaming itself, you may need to disable this option:
+If you have lots of different tmux sessions running (perhaps as different users, or on different machines, or for different projects) then you might like to change the color of each session, to help make it recognisable:
 
 ```bash
-tmux set-option -g allow-rename off
+# Set a colour by name
+tmux set-window-option -g status-bg magenta
+# Or keep running this command, until you find a colour you like
+tmux set-window-option -g status-bg colour$((RANDOM % 256))
+
+# If you choose a dark background, then you might like to choose a slightly lighter foreground
+tmux set-window-option -g window-status-fg colour6
+tmux set-window-option -g window-status-fg colour7
+tmux set-window-option -g window-status-fg colour15
+# You should also do the same for the text at the left and right of the bar
+tmux set-window-option -g status-fg colour7
+# (There are also status-left-fg and status-right-fg but perhaps we can leave those to inherit from status-fg?)
+
+# If you chose a light background, and colour0 is not black enough for you (perhaps due to your terminal's settings) you may try the darkest grey instead
+tmux set-window-option -g window-status-fg colour232
+# You can also do this for the text in the current window marker
+tmux set-window-option -g window-status-current-fg colour232
+# Soften the text at the left and right of the bar
+tmux set-window-option -g status-fg colour238
 ```
 
 # How to search (default mode)
@@ -213,6 +237,20 @@ And then:
 
     , rename-window
 
+# Listing options
+
+To see all the available options, and their current setting:
+
+```bash
+tmux show -g
+```
+
+And to see all the window options:
+
+```bash
+tmux show -gw
+```
+
 # Sharing
 
 Different terminals can use different windows in one tmux session.
@@ -243,3 +281,8 @@ Before doing that you may like to list the windows from that session
 
     setw synchronize-panes on
 
+# Dealing with reduced dimensions
+
+If you attach to an existing tmux session, and the width and height are reduced, this is likely because another session is attached from a different terminal.  This can also happen if your ssh connection died, and the old "ghost" session stays alive for a while.
+
+To resolve this, if you are sure nobody is using the other session, you can use `<Prefix> D` and select the session you want to force to disconnect.  Look for the one with the lower width x height.
