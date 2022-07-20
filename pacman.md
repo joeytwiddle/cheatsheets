@@ -1,8 +1,12 @@
 # Installing
 
+Search for available packages by name or description: `pacman -Ss <partial_text> | more`
+
 Install package: `pacman -S <package_name>`
 
 Install package and also sync package databases: `pacman -Sy <package_name>`
+
+Build (and install with `-i`) your own package from a `PKGBUILD` file: `makepkg -si` (`-s` syncs dependencies)
 
 # Updating
 
@@ -16,7 +20,8 @@ Although the wiki recommends:
 
 #
 
-Remove a package: `pacman -R <package_name>` (the package_name should **not** include the namespace)
+Remove a package (and dependencies): `pacman -Rcns <package_name>` (the package_name should **not** include the namespace) (Adding `-u` or doing just `-Rus` might be safer.) (I believe `-n` removes config and backup files, suitable if you don't intend to reinstall the package again in future.)
+Remove a package (leaving dependencies installed): `pacman -R <package_name>`
 
 For faster installs we can use powerpill, which downloads files in parallel.
 
@@ -25,11 +30,25 @@ Search local package names or descriptions: `pacman -Qs <partial_text>`
 
 See full description of a package: `pacman -Qi <package_name>`
 
-Search for available packages by name or description: `pacman -Ss <partial_text> | more`
-
-Find the package which owns a file: `pacman -Qo <file>`
+Find the package which owns a file: `pacman -Qo <file>` ("query owner")
 
 List installed packages: `pacman -Qn`
+
+OK but this is crazy, trying but failing to find vscode:
+
+```
+$ pacaur -Q code
+visual-studio-code-bin 1.54.2-1
+$ pacaur -Q visual
+error: package 'visual' was not found
+$ pacaur -Qn | egrep '(code|visual)'
+... no visual-studio-code-bin ...
+$ pacaur -Qs vscode
+local/visual-studio-code-bin 1.54.2-1
+    Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version)
+```
+
+List packages which could be upgraded: `pacman -Sy && pacman -Qu` (note that this updates lists, so you should do a full upgrade before installing individual packages, or risk them not working)
 
 List files in package: `pacman -Ql <package_name>`
 
@@ -39,7 +58,7 @@ List dependencies of a remote package: `pacman -Si <package_name> | sed -n '/Dep
 
 List dependencies of an installed package using pactree: `pactree -u <package_name>`
 
-List reverse dependencies of an installed package using pactree: `pactree -r <package_name>`
+List reverse dependencies (why installed) of an installed package using pactree: `pactree -r <package_name>`
 
 List dependencies of an installed package using expac: `expac -S '%r/%n: %D' <package_name>`
 
@@ -94,6 +113,8 @@ sudo pacman -Scc
 You could also automate the cleaning some pacman hooks: https://www.ostechnix.com/recommended-way-clean-package-cache-arch-linux/
 
 ## My update process
+
+This is now implemented in the script `~/bin/update-manjaro`
 
 ### Clear caches
 
@@ -209,5 +230,5 @@ Whereas earlier kernels installed more packages
 - linux58-nvidia-430xx 430.64-18 (linux58-extramodules)
 - linux58-virtualbox-host-modules 6.1.14-6 (linux58-extramodules)
 
-20210615 - I am currently on 5.10.41-1-MANJARO without nvidia support, but running ok.  I haven't tried any games.
+20210615 - I am currently on 5.10.41-1-MANJARO without nvidia support, but running ok.  Games have been working fine.  (Bad North, Borderlands2, Tharsis)
 

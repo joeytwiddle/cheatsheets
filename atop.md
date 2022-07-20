@@ -21,6 +21,7 @@ Then jump forwards and backwards in time with <kbd>t</kbd> and <kbd>T</kbd> resp
 
 Use <kbd>b</kbd> then `16:20` to jump to a specific time.
 
+Hit `?` to bring up the help.
 
 # Sorting processes
 
@@ -29,6 +30,32 @@ Use <kbd>b</kbd> then `16:20` to jump to a specific time.
     D – sort in order of disk activity
     N – sort in order of network activity
     A – sort in order of most active resource (auto mode)
+
+The `A` sorting is great for drawing attention to the current bottleneck.  An `A` will appear next to the column which it has chosen.
+
+# Showing process info
+
+These keys change what data is displayed for each process:
+
+    g - generic (default)
+    c - full command line (helps to differentiate different instances of the same executable)
+    m - memory
+    d - disk
+    n - network
+    s - scheduling
+    v - various
+    e - GPU usage
+
+# Showing other info
+
+Instead of processes, you can display:
+
+    u - accumulate process data by user
+    u - accumulate process data by process name
+    j - accumulate process data by docker container
+    y - break process into individual threads
+    Y - sort the threads in y view
+
 
 
 # Sources

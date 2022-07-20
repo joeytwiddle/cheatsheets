@@ -3,3 +3,11 @@
 ```
 :cd %:p:h
 ```
+
+## Paste without reindenting
+
+```
+CTRL-R CTRL-O {register}
+```
+
+

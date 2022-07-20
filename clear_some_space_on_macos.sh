@@ -78,6 +78,11 @@ rm -rf ~/.android/avd/*
 
 
 
+# Things installed by pip (python's package manager)
+#rm -rf ~/.local/lib/python*.*/
+
+
+
 # Docker
 # Clear stopped containers and caches
 docker system prune -f

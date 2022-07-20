@@ -110,3 +110,13 @@ Then focus your cursor on the target folder, and move the marked files with:
 
     mm
 
+
+
+# Editing in fullscreen
+
+If you hit `<Enter>` in netrw to open a file instead of `v` then the file will open in the current window, without splitting.  To get back to netrw you can:
+
+    :Ex to open netrw "explorer" in the current window
+    :Vex to open netrw in a sidebar (vertical split)
+    :Sex to open netrw at the top of the screen (horizontal split)
+
