@@ -30,6 +30,7 @@ tmux set-window-option -g window-status-current-bg colour255
 tmux set-window-option -g window-status-current-fg colour16
 
 # Navigate between windows and panes with Shift-ArrowKeys
+# (Sadly these do not work through Putty on Windows)
 tmux bind-key -n S-Left select-window -t -1
 tmux bind-key -n S-Right select-window -t +1
 tmux bind-key -n S-Up select-pane -U
@@ -90,8 +91,8 @@ tmux set-window-option -g status-fg colour238
 # How to copy and paste (default mode)
 
 1. Hit `<Prefix> [` to start copy/scroll mode
-2. Find the start of your selection and hit `<Ctrl-Space>`
-3. Find the end of your selection and hit `<Alt-W>` or `<Ctrl-W>`
+2. Find the start of your selection and hit `<Ctrl-Space>` (or `<Space>` in some modes)
+3. Find the end of your selection and hit `<Alt-W>` or `<Ctrl-W>` (or `<Enter>` in some modes)
 4. Go to the pane or window where you want to paste, and hit `<Prefix> ]` to paste
 
 # Keybinds
