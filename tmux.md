@@ -60,6 +60,10 @@ tmux rename-window <new_title>
 If you have lots of different tmux sessions running (perhaps as different users, or on different machines, or for different projects) then you might like to change the color of each session, to help make it recognisable:
 
 ```bash
+# Instead of showing [0], give the session a recognisable name
+# (You may want to set your own string here)
+tmux rename-session "$(hostname)"
+
 # Set a colour by name
 tmux set-window-option -g status-bg magenta
 # Or keep running this command, until you find a colour you like
@@ -71,14 +75,21 @@ tmux set-window-option -g window-status-fg colour7
 tmux set-window-option -g window-status-fg colour15
 # You should also do the same for the text at the left and right of the bar
 tmux set-window-option -g status-fg colour7
+tmux set-window-option -g status-fg colour15
 # (There are also status-left-fg and status-right-fg but perhaps we can leave those to inherit from status-fg?)
 
-# If you chose a light background, and colour0 is not black enough for you (perhaps due to your terminal's settings) you may try the darkest grey instead
+# If you chose a light background, and colour0 is not black enough for you (perhaps due to your terminal's settings) you may try colour16 instead
+tmux set-window-option -g window-status-fg colour16
+# a dark grey
+tmux set-window-option -g window-status-fg colour234
+# or the darkest grey
 tmux set-window-option -g window-status-fg colour232
-# You can also do this for the text in the current window marker
+# You can also make the text in the current window marker darker
 tmux set-window-option -g window-status-current-fg colour232
 # Soften the text at the left and right of the bar
-tmux set-window-option -g status-fg colour238
+#tmux set-window-option -g status-fg colour238
+# Darken the text at the left and right of the bar
+tmux set-window-option -g status-fg colour232
 ```
 
 # How to search (default mode)
