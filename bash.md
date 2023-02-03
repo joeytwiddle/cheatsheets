@@ -2,7 +2,7 @@
 
 Some setup to make the bash shell easier to work with.
 
-You can paste these into a running terminal.
+You can paste these into a running terminal, or paste them into your `~/.bash_profile`
 
 ```bash
 # Handy aliases
@@ -40,6 +40,8 @@ fi
 If you want these to work in all future shells, you are supposed to put them into your `~/.bashrc`
 
 However when placed on a remote machine, I found that caused rsync to display the warning "bind: warning: line editing not enabled".  Therefore I recommend the `bind` commands be placed inside `~/.bash_profile` (or into `~/.inputrc` but suitably modified) and only enabled for user logins.
+
+Can't we just add everything to `~/.bash_profile` and done?
 
 ## Keybinds
 

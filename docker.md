@@ -184,7 +184,7 @@ Some images set a default user.  If you want to enter the container as the root 
 apk add bash procps findutils bind-tools nmap man vim curl
 
 # For Debian
-apt-get update && apt-get -y install procps findutils inetutils-ping dnsutils nmap man vim curl
+apt-get update && apt-get -y install procps findutils inetutils-ping dnsutils nmap man vim curl net-tools
 
 alias l='ls -lartFh --color'
 ```

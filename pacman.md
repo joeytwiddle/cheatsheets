@@ -4,7 +4,7 @@ Search for available packages by name or description: `pacman -Ss <partial_text>
 
 Install package: `pacman -S <package_name>`
 
-Install package and also sync package databases: `pacman -Sy <package_name>`
+Install package and also sync package databases (not recommended): `pacman -Sy <package_name>`
 
 Build (and install with `-i`) your own package from a `PKGBUILD` file: `makepkg -si` (`-s` syncs dependencies)
 
@@ -20,7 +20,7 @@ Although the wiki recommends:
 
 #
 
-Remove a package (and dependencies): `pacman -Rcns <package_name>` (the package_name should **not** include the namespace) (Adding `-u` or doing just `-Rus` might be safer.) (I believe `-n` removes config and backup files, suitable if you don't intend to reinstall the package again in future.)
+Remove a package (and dependencies): `pacman -Rcnsu <package_name>` (the package_name should **not** include the namespace) (Adding `-u` or doing just `-Rus` might be safer.) (I believe `-n` removes config and backup files, suitable if you don't intend to reinstall the package again in future, but not suitable if they might contain some useful configuration.)
 Remove a package (leaving dependencies installed): `pacman -R <package_name>`
 
 For faster installs we can use powerpill, which downloads files in parallel.
@@ -230,5 +230,19 @@ Whereas earlier kernels installed more packages
 - linux58-nvidia-430xx 430.64-18 (linux58-extramodules)
 - linux58-virtualbox-host-modules 6.1.14-6 (linux58-extramodules)
 
-20210615 - I am currently on 5.10.41-1-MANJARO without nvidia support, but running ok.  Games have been working fine.  (Bad North, Borderlands2, Tharsis)
+However it seems linux510, linux519 and linux60 do have support for nvidia drivers.
+
+- linux519-5.19.17-2
+- linux519-headers-5.19.17-2
+- linux519-nvidia-525.60.11-1
+
+# Installing nvidia drivers
+
+The easiest way is:
+
+```sh
+pacaur -S nvidia
+```
+
+and then select the driver for your current kernel (or a newer kernel if you want).  It will usually be a package like `linux60-nvidia` so you could just install that package directly.
 
