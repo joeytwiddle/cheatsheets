@@ -15,3 +15,7 @@ We can actually set `_id` to anything we want, as long as it is unique!
    (We can use `-` instead of `~` if we prefer.  But either way, we should [avoid](https://github.com/dylang/shortid/issues/96) using nanoids that have one of those symbols at the end!  Probably simpler to just reduce the alphabet to alphanumerics.)
 
 By default, mongo uses ObjectId to generate long _ids because they are guaranteed to be unique even in the worst-case scenarios. But in situations when we know the number of documents created will be low we can opt for short _ids.
+
+## See Also
+
+I wrote a more comprehensive review of `_id` options in [this StackOverflow answer](https://stackoverflow.com/a/49147847/99777).
