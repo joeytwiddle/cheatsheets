@@ -43,27 +43,31 @@ Do anything you want on the machine, make a mess.  Then do the following, which 
 
 2. Select `Power off the machine` and also `Restore current snapshot`
 
-Why?  We don't want the remember/store the _current_ messy state of the machine, because we are going to use the clean snapshot in future.  (This allows us to test repeatedly, starting with a clean install each time.)
+Why?
 
-The next time we start the machine, we don't want to wait while it boots up.  It will start immediately in the snapshot state, which is faster than a full boot.
+- We don't want the remember/store the _current_ messy state of the machine, because we are going to use the clean snapshot in future.  (This allows us to test repeatedly, starting with a clean install each time.)
+
+- The next time we start the machine, we don't want to wait while it boots up.  It will start immediately in the snapshot state, which is faster than a full boot.
+
+- Starting from an early snapshot also means our virtual machine won't slowly grow in size over time.
 
 (You can manage snapshots from the ≡ menu by each machine in the main VirtualBox Manager window.)
 
 ## Use the machine for testing
 
-1. Open the virtual machine.  Open the File Manager and navigate to `Network > \\VBOXSVR\Vagrant`.
+You can use this process to build `.exe` files on your host machine, and test them in the virtual machine.
+
+1. Open the virtual machine.  Open the File Manager and navigate to `Network > \\VBOXSVR\Vagrant`
 
    This folder corresponds to `vagrant_win2012/` on your host machine (the first folder you created).
 
    (I like to make a shortcut to this folder, and save that in a Snapshot.)
 
-2. On your host machine, drop a file into `vagrant_win2012/`.
+2. On your host machine, drop a file into `vagrant_win2012/`
 
 3. On the virtual machine, press `F5` to refresh the File Manager.  You should see your file appear.
 
 4. Run your file inside the virtual machine.
-
-You can use this to build exe files on your host machine, and test them in the virtual machine.
 
 ## Folders and space
 
