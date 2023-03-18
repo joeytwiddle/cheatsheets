@@ -6,6 +6,11 @@ rm -rfv ~/.cache/pacaur/*
 
 "$HOME"/.local/share/ktorrent/delete-old-dnd-files.sh
 
+# Not so much volume, but lots of tiny files accumulated here
+cd ~/.config/session
+./remove_old_files.sh
+cd -
+
 # Root
 
 rm -rf /var/cache/pacman/pkg/*
