@@ -92,12 +92,27 @@ tmux set-window-option -g window-status-current-fg colour232
 tmux set-window-option -g status-fg colour232
 ```
 
-# How to search (default mode)
+# How to search scrollback history (emacs mode)
 
 1. Hit `<Prefix> [` to start copy/scroll mode
 2. Hit `<Ctrl-R>` to search backwards, or
 2. Hit `<Ctrl-S>` to search forwards (may jump up to the top)
-3. To repeat search, you can hit `n` or `N` for the reverse direction
+3. To repeat the search, you can hit `n` or `N` for the reverse direction
+
+# How to search scrollback history (vi mode)
+
+If you are in `emacs` mode (traditionally the default) then you can switch to `vi` mode with:
+
+```
+<Prefix>:set-window-option -g mode-keys vi
+```
+
+Then to search:
+
+1. Hit `<Prefix> [` to start copy/scroll mode
+2. Hit `?` to search backwards, or
+2. Hit `/` to search forwards (may jump up to the top)
+3. To repeat the search, you can hit `n` or `N` for the reverse direction
 
 # How to copy and paste (default mode)
 
