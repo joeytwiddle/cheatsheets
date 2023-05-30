@@ -66,3 +66,4 @@ npx npkill -s size
 # Alphabetically (thorough)
 npx npkill
 ```
+Navigate with up/down keys, and press `<Space>` to remove the focused `node_modules` folder.
