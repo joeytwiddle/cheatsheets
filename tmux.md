@@ -92,86 +92,118 @@ tmux set-window-option -g window-status-current-fg colour232
 tmux set-window-option -g status-fg colour232
 ```
 
-# How to search scrollback history (emacs mode)
+# Search scrollback (when in copy mode)
 
-1. Hit `<Prefix> [` to start copy/scroll mode
-2. Hit `<Ctrl-R>` to search backwards, or
-2. Hit `<Ctrl-S>` to search forwards (may jump up to the top)
-3. To repeat the search, you can hit `n` or `N` for the reverse direction
+First, hit `<Prefix> [` to start copy/scroll mode.
 
-# How to search scrollback history (vi mode)
+Then with Emacs key bindings (the old default):
 
-If you are in `emacs` mode (traditionally the default) then you can switch to `vi` mode with:
+    <Ctrl-S> search forwards
+    <Ctrl-R> search backwards
 
-```
-<Prefix>:set-window-option -g mode-keys vi
-```
+Or with vi keybindings (the new default, or `set-window-option -g mode-keys vi`):
 
-Then to search:
+    / search forwards
+    ? search backwards
 
-1. Hit `<Prefix> [` to start copy/scroll mode
-2. Hit `?` to search backwards, or
-2. Hit `/` to search forwards (may jump up to the top)
-3. To repeat the search, you can hit `n` or `N` for the reverse direction
+And then:
+
+    n to jump to the next match
+    N to jump to the previous match
 
 # How to copy and paste (default mode)
 
 1. Hit `<Prefix> [` to start copy/scroll mode
-2. Find the start of your selection and hit `<Ctrl-Space>` (or `<Space>` in some modes)
-3. Find the end of your selection and hit `<Alt-W>` or `<Ctrl-W>` (or `<Enter>` in some modes)
-4. Go to the pane or window where you want to paste, and hit `<Prefix> ]` to paste
+2. Find the start of your selection with arrow keys (in emacs mode) or vi keybinds (in vi mode)
+3. To mark the start, hit `<Ctrl-Space>` (in emacs mode) or `<Space>` or `y` (in vi mode)
+4. Move to the end of your selection and hit `<Enter>` or `<Alt-W>` or `<Ctrl-W>` to copy
+5. Hit `q` to get out of copy/scroll mode
+6. Go to the pane or window where you want to paste, and hit `<Prefix> ]` to paste
 
 # Keybinds
 
-Hit the prefix key (Ctrl-B by default) before using one of the keybinds below.
+Hit the prefix key (`<Ctrl-B>` by default) before using one of the keybinds below.
 
-So, to see the help, press `Ctrl-B` and then `?`
+For example, to see the help, press `<Ctrl-B>` and then `?`
 
 # Help
 
-    ? list-keys            (show all keybindings)
-    q leave help page
+    ? list-keys            show all keybindings
+    q (without prefix)     leave help page
 
 You can also run from the command line, inside or outside of tmux:
 
-    tmux list-keys
+    $ tmux list-keys
+    <Prefix> :tmux list-keys
 
-# Create windows
+# Create and destroy windows
 
     c new-window
-    " split-window
-    % split-window -h      (horizontally)
+    C-d (without prefix) exit the shell, causing the window to close, or
+    x confirm-before -p "kill-pane #P? (y/n)" kill-pane
+
+# Disconnecting from a tmux session
+
+This will drop you back out to your original shell, but leave the tmux windows running.
+
+    d detach-client
+    D detach another client
+    ( switch-client -p
+    ) switch-client -n
+
+# Reconnecting to a tmux session
+
+To get back to the most recently used session:
+
+    $ tmux attach
+    # or
+    $ tmux a
+
+If you have multiple sessions, and need to choose:
+
+    $ tmux a
+    <Prefix> :choose-session
+
+or:
+
+    $ tmux list-sessions
+    $ tmux a -t [session_name]
 
 # Navigate windows
 
+    # Above I put these on Shift-Right/Left
     n next-window
     p previous-window      (in list)
     l last-window          (you were focused on)
     w choose-window        (from list)
-    x confirm-before -p "kill-pane #P? (y/n)" kill-pane
     0 select-window -t :0
     ...
     9 select-window -t :9
+
     . command-prompt "move-window -t '%%'"
         prompts for new window position (but will only move to empty spot)
 
+    # Above I put this on Ctrl-Shift-Left/Right
     :swap-window -t <target_window>
         use -1 for target_window to swap this window with the window to its left
 
 # Navigate panes
 
-    ; last-pane
+    " split-window
+    % split-window -h      (horizontally)
     o select-pane -t :.+   (cycle through panes by moving cursor)
     C-o rotate-window      (cycle through panes by moving panes)
-    q display-panes
+    ; last-pane
     { swap-pane -U
     } swap-pane -D
-    -r      Up select-pane -U
-    -r    Down select-pane -D
-    -r    Left select-pane -L
-    -r   Right select-pane -R
+    q display-panes
+    # Above I put these on Shift-Up/Down
+    k      Up select-pane -U
+    j    Down select-pane -D
+    h    Left select-pane -L
+    l   Right select-pane -R
 
-# Navigate panes
+# Manage panes
 
     ! break-pane           (current pane breaks out into a new window)
 
@@ -194,30 +226,6 @@ Alternatively, mark a pane with:
 And then bring the marked pane with:
 
     :join-pane
-
-# Disconnecting and getting back
-
-    ( switch-client -p
-    ) switch-client -n
-    d detach-client
-    D detach another client
-
-# Search (when in copy mode)
-
-With Emacs key bindings (the default):
-
-    C-s search forwards
-    C-r search backwards
-
-Or with vi keybindings (`set-window-option -g mode-keys vi`):
-
-    / search forwards
-    ? search backwards
-
-And then:
-
-    n jump to next match
-    N jump to previous match
 
 # More
 
