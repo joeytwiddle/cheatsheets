@@ -1,6 +1,6 @@
 ## Setup
 
-Some setup to make the bash shell easier to work with.
+Some setup to make the bash shell easier to work with.  I like to use this on remote machines.
 
 You can paste these into a running terminal, or paste them into your `~/.bash_profile`
 
@@ -68,15 +68,15 @@ Ctrl-K             Clear from cursor to end of line
 Ctrl-R             Search history
 
 Escape .           Insert last argument of previous line
-Meta-.             Insert last argument of previous line
+Alt-.              Insert last argument of previous line
 
 Not keybinds but these evaluate to special things:
 
 !$                 Last argument on the previous line
 !#$                Previous argument on this line
 
-Ctrl-Meta-e        Expand any special things, so you can see what they evaluate
-                   to before before hitting Enter.
+Ctrl-Alt-e         Expand any special things, so you can see what they evaluate
+                   to before before hitting Enter.  (E.g. expand !$ or !#$ or !k)
 Alt-^ Alt-Shift-6  Seems to do the same thing
 ```
 
