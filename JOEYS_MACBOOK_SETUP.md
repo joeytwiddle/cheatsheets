@@ -7,9 +7,10 @@ Open Safari, install Chrome, iTerm2 and homebrew.
 In System Preferences:
 - Under Trackpad -> Point & Click, enable "Tap to click".
 - Under Trackpad -> More Gestures, disable "Swipe between pages" (the annoying thing that happens when you accidentally swipe with three fingers)
+- Under Keyboard, set "Key repeat rate" and "Delay until repeat" to far right (fastest) settings.
 - Under Keyboard -> Keyboard, enable "Use F1, F2, ... as standard function keys"
 - Under Keyboard -> Modifier Keys, set Caps Lock to perform Control.
-- Under Keyboard -> Shortcuts, go to "App Shortcuts" and create a new binding with action "Zoom" and shortcut "Cmd-Shift-Equals".  (Actually that is what the web recommends, but if you want to fit with iTerm, put it on Cmd-Opt-Equals.)  See [step 3 here](http://osxdaily.com/2013/03/22/5-simple-window-management-keyboard-shortcuts-to-improve-workflow-in-mac-os-x/)
+- Under Keyboard -> Shortcuts, go to "App Shortcuts" and create a new binding with action (Menu Title) "Zoom" and shortcut "Cmd-Shift-Equals".  (Actually that is what the web recommends, but if you want to fit with iTerm, put it on Cmd-Opt-Equals.)  See [step 3 here](http://osxdaily.com/2013/03/22/5-simple-window-management-keyboard-shortcuts-to-improve-workflow-in-mac-os-x/)  I wanted to map this to `Opt-Z` to match my Linux, but for some reason that binding would not respond.
 
 # Make Finder show hidden files
 
@@ -33,7 +34,7 @@ brew install coreutils gnu-sed findutils
 # findutils contains GNU xargs
 brew install bash gnu-tar
 brew install macvim
-brew install tmux
+brew install fzf ripgrep bat tmux
 # gnupg takes quite a long time (many dependencies)
 brew install gnupg
 ```
@@ -90,6 +91,17 @@ brew cask install inkscape
 brew install mplayer
 ```
 
+VSCode:
+
+To get `code` on your PATH, in VSCode run command "Shell Command: Install 'code' command in PATH"
+
+When I press and hold `k` in VSCode, something pops up and stops it from repeating.  (Others have the issue when holding `k`.)  To [fix this](https://stackoverflow.com/a/44010683):
+
+```bash
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+# then restart VSCode
+```
+
 # Desktop
 
 To get Control when pressing CapsLock:
@@ -113,6 +125,8 @@ To get Escape when pressing Control (from Sierra onwards):
 To avoid accidentally triggering <kbd>Escape</kbd> after pressing and releasing <kbd>Control</kbd>:
 - Switch to the "Parameters" sub-tab and change `to_if_alone_timeout_milliseconds` from 1000 to 200
 
+- To get arrow keys when pressing Opt-H/J/K/L, install the ["Map Left Option plus h/j/k/l to Arrows" rule]() for Karabiner Elements.
+
 Install [Spectacle](https://www.spectacleapp.com/) to allow easy manipulation of windows.
 - Maximize (gone):        <kbd>Ctrl-Opt-Cmd-M</kbd>
 - Left half:              <kbd>Opt-Cmd-Left</kbd>
@@ -133,3 +147,24 @@ I changed the ShiftIt mappings to:
 - I also changed the size to Fixed 50x28
 
 You might also like to take a look at [Moom](https://manytricks.com/moom/).
+
+Another is [MAGNET](https://magnet.crowdcafe.com/).
+
+## Dealing with UK keyboard layout
+
+Convert Alt-§ into Alt-backtick using [these instructions](https://apple.stackexchange.com/a/401673/159962).
+
+Swap `£` and `#` using the "Exchange £ and #" rule from [here](https://ke-complex-modifications.pqrs.org/?q=british).
+
+## Settings for iTerm2
+
+- Appearance > Tab bar location: Bottom
+
+- Profile > Colors > Color Presets > Import > Jargo (Joey's Argonaut)
+
+- Turn off Preferences > General > Window > Adjust window when changing font size
+
+## Fonts
+
+Grab Hasklug Nerd Font Complete from Joey's Dropbox.  (Can also grab Lucida Console and Lucida TypeWriter if you like.)
+
