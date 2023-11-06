@@ -39,6 +39,11 @@ brew install fzf ripgrep bat tmux
 brew install gnupg
 ```
 
+If you want colours to work in ls, you can either:
+
+- Add `/opt/homebrew/Cellar/coreutils/9.4/libexec/gnubin` to `$PATH`, or
+- `sudo ln -s /opt/homebrew/Cellar/coreutils/9.4/libexec/gnubin/{ls,dircolors} /usr/local/bin/` and then `rehash`
+
 Install iterm2 from: https://www.iterm2.com/
 
 Install jsh and rc_files:
@@ -91,7 +96,15 @@ brew cask install inkscape
 brew install mplayer
 ```
 
-VSCode:
+### VSCode
+
+```bash
+cd ~/Library/"Application Support"
+ln -s ~/rc_files/.config/Code .
+
+cd Code
+./install_extensions_from_list.sh
+```
 
 To get `code` on your PATH, in VSCode run command "Shell Command: Install 'code' command in PATH"
 
@@ -125,7 +138,26 @@ To get Escape when pressing Control (from Sierra onwards):
 To avoid accidentally triggering <kbd>Escape</kbd> after pressing and releasing <kbd>Control</kbd>:
 - Switch to the "Parameters" sub-tab and change `to_if_alone_timeout_milliseconds` from 1000 to 200
 
+Your Fn and Control keys may be swapped, compared to PC keyboards.  You can swap them back, using:
+
+- Not recommended (causes incompatibilities elsewhere): Keyboard > Keyboard Shortcuts > Modifier Keys
+
+- Recommended: [Do it](https://apple.stackexchange.com/a/313244/159962) in Karabiner Elements
+
+  - Under Karabiner Elements > Simple Modifications > For all devices, set:
+
+    - fn -> left_control
+    - left_control -> fn
+
+    - grave_accent_and_tilde -> backslash (I find this useful for UK keyboard layout, where that button is unused)
+
+- If you did not do the above, then you may like to do this: To get PageUp/PageDown when pressing Fn-Up/Down, install the ["FN + Arrow Keys" rule](https://ke-complex-modifications.pqrs.org/#fn_arrows) for Karabiner Elements.
+
 - To get arrow keys when pressing Opt-H/J/K/L, install the ["Map Left Option plus h/j/k/l to Arrows" rule]() for Karabiner Elements.
+
+  However, if you have already swapped Fn and Ctrl, then this may apply to the wrong key.
+
+- Alternatively, try ["left_option twice toggle to get into vim-like hjkl arrows in specified apps"](https://ke-complex-modifications.pqrs.org/#toggle_vim)
 
 Install [Spectacle](https://www.spectacleapp.com/) to allow easy manipulation of windows.
 - Maximize (gone):        <kbd>Ctrl-Opt-Cmd-M</kbd>
@@ -155,6 +187,10 @@ Another is [MAGNET](https://magnet.crowdcafe.com/).
 Convert Alt-§ into Alt-backtick using [these instructions](https://apple.stackexchange.com/a/401673/159962).
 
 Swap `£` and `#` using the "Exchange £ and #" rule from [here](https://ke-complex-modifications.pqrs.org/?q=british).
+
+Since we are now not using the grave/tilde button in the bottom-left of the keyboard, we can repurpose it to backslash and pipe: To do that, under Karabiner Elements > Simple Modifications > For all devices, set:
+
+- grave_accent_and_tilde -> backslash (I find this useful for UK keyboard layout, where that button is unused)
 
 ## Settings for iTerm2
 
