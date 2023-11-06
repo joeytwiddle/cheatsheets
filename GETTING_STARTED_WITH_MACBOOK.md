@@ -173,6 +173,18 @@ And here is how one package links itself into the system to start on bootup:
 
 
 
+# Using iTerm2
+
+To [attach a tab](https://apple.stackexchange.com/questions/14704/reattach-terminal-tab-to-another-window) to another window:
+
+1. Make the tab you want to move smaller, so you can see the target window behind it.
+
+2. Hold Shift-Option-Command and drag the _content_ of the tab into the tab bar of the target window.
+
+   (If you drag it onto the content of the target window, you will create split panes.)
+
+
+
 # Using MacVim
 
 To grab the name of the current file:
