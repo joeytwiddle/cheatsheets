@@ -35,6 +35,8 @@ brew install coreutils gnu-sed findutils
 brew install bash gnu-tar
 brew install macvim
 brew install fzf ripgrep bat tmux
+# Surprisingly light
+brew install docker docker-compose
 # gnupg takes quite a long time (many dependencies)
 brew install gnupg
 ```
@@ -93,6 +95,7 @@ brew cask install gimp
 brew install geeqie
 brew cask install xquartz
 brew cask install inkscape
+brew cask install imagemagick # many dependencies
 brew install mplayer
 ```
 
@@ -198,9 +201,17 @@ Since we are now not using the grave/tilde button in the bottom-left of the keyb
 
 - Profile > Colors > Color Presets > Import > Jargo (Joey's Argonaut)
 
-- Turn off Preferences > General > Window > Adjust window when changing font size
+- Turn off General > Window > Adjust window when changing font size
+
+- Profiles > Terminal > Scrollback lines: 20,000
 
 ## Fonts
 
 Grab Hasklug Nerd Font Complete from Joey's Dropbox.  (Can also grab Lucida Console and Lucida TypeWriter if you like.)
+
+## Screen zoom
+
+Go to System Settings > Accessibility > Zoom and set "Use scroll guesture with modifier key"
+
+I set the `Option` key plus scroll to zoom in and out of the desktop.
 
