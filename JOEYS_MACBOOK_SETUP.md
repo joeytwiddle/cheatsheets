@@ -8,9 +8,11 @@ In System Preferences:
 - Under Trackpad -> Point & Click, enable "Tap to click".
 - Under Trackpad -> More Gestures, disable "Swipe between pages" (the annoying thing that happens when you accidentally swipe with three fingers)
 - Under Keyboard, set "Key repeat rate" and "Delay until repeat" to far right (fastest) settings.
-- Under Keyboard -> Keyboard, enable "Use F1, F2, ... as standard function keys"
-- Under Keyboard -> Modifier Keys, set Caps Lock to perform Control.
-- Under Keyboard -> Shortcuts, go to "App Shortcuts" and create a new binding with action (Menu Title) "Zoom" and shortcut "Cmd-Shift-Equals".  (Actually that is what the web recommends, but if you want to fit with iTerm, put it on Cmd-Opt-Equals.)  See [step 3 here](http://osxdaily.com/2013/03/22/5-simple-window-management-keyboard-shortcuts-to-improve-workflow-in-mac-os-x/)  I wanted to map this to `Opt-Z` to match my Linux, but for some reason that binding would not respond.
+- Under Keyboard -> Keyboard Shortcuts -> Function Keys, enable "Use F1, F2, ... as standard function keys"
+- Under Keyboard -> Keyboard Shortcuts -> Modifier Keys, set Caps Lock to perform Control.
+- Under Keyboard -> Keyboard Shortcuts -> Modifier Keys, set Globe to perform Control.
+- Under Keyboard -> Keyboard Shortcuts -> Modifier Keys, set Control to perform Globe.
+- Under Keyboard -> Keyboard Shortcuts -> App Shortcuts, create a new binding with action (Menu Title) "Zoom" and shortcut "Cmd-Shift-Equals".  (Actually that is what the web recommends, but if you want to fit with iTerm, put it on Cmd-Opt-Equals.)  See [step 3 here](http://osxdaily.com/2013/03/22/5-simple-window-management-keyboard-shortcuts-to-improve-workflow-in-mac-os-x/)  I wanted to map this to `Opt-Z` to match my Linux, but for some reason that binding would not respond.
 
 # Make Finder show hidden files
 
@@ -120,11 +122,6 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 # Desktop
 
-To get Control when pressing CapsLock:
-- Open System Preferences
-- Open "Keyboard" and then click the "Modifier Keys..." button
-- Change "Caps Lock" to "Control"
-
 To get Escape when pressing Control (for OLD versions of Mac OS X, before Sierra):
 - Install [Karabiner](https://pqrs.org/osx/karabiner/history.html)
 - Open Preferences
@@ -162,19 +159,18 @@ Your Fn and Control keys may be swapped, compared to PC keyboards.  You can swap
 
 - Alternatively, try ["left_option twice toggle to get into vim-like hjkl arrows in specified apps"](https://ke-complex-modifications.pqrs.org/#toggle_vim)
 
-Install [Spectacle](https://www.spectacleapp.com/) to allow easy manipulation of windows.
+(OLD) Install [Spectacle](https://www.spectacleapp.com/) to allow easy manipulation of windows.
 - Maximize (gone):        <kbd>Ctrl-Opt-Cmd-M</kbd>
 - Left half:              <kbd>Opt-Cmd-Left</kbd>
 - Center:                 <kbd>Opt-Cmd-C</kbd>
 - Make larger:            <kbd>Ctrl-Shift-Opt-Right</kbd>
 
-Or alternatively try [ShiftIt](https://github.com/fikovnik/ShiftIt).
+(OLD) Install [ShiftIt](https://github.com/fikovnik/ShiftIt) to get:
 - Maximize:               <kbd>Ctrl-Opt-Cmd-M</kbd>
 - Left:                   <kbd>Ctrl-Opt-Cmd-Left</kbd>
 - Center:                 <kbd>Ctrl-Opt-Cmd-C</kbd>
 - Increase:               <kbd>Ctrl-Opt-Cmd-=</kbd>
-
-I changed the ShiftIt mappings to:
+But I changed the ShiftIt mappings to:
 - Maximize:               <kbd>Opt-Z</kbd>
 - Left:                   <kbd>Cmd-Opt-K</kbd>
 - Center:                 <kbd>Cmd-Opt-L</kbd>
@@ -185,7 +181,11 @@ You might also like to take a look at [Moom](https://manytricks.com/moom/).
 
 Another is [MAGNET](https://magnet.crowdcafe.com/).
 
-## Dealing with UK keyboard layout
+Install [Hammerspoon](https://www.hammerspoon.org/) and configure it with [ShiftIt Spoon](https://github.com/peterklijn/hammerspoon-shiftit).
+
+## Dealing with a UK keyboard layout
+
+If you have a MacBook with a UK layout, but are accustomed to keys in a US layout, then you may like to reconfigure some keys.
 
 Convert Alt-§ into Alt-backtick using [these instructions](https://apple.stackexchange.com/a/401673/159962).
 
@@ -195,6 +195,15 @@ Since we are now not using the grave/tilde button in the bottom-left of the keyb
 
 - grave_accent_and_tilde -> backslash (I find this useful for UK keyboard layout, where that button is unused)
 
+## Fonts
+
+Grab Hasklug Nerd Font Complete from Joey's Dropbox.  (Can also grab Lucida Console and Lucida TypeWriter if you like.)
+
+- https://www.dropbox.com/home/fonts/custom_nerdfonts
+- https://www.dropbox.com/home/fonts/FOR_MAC
+
+After downloading, drag and drop these into the FontBook application.
+
 ## Settings for iTerm2
 
 - Appearance > Tab bar location: Bottom
@@ -203,11 +212,12 @@ Since we are now not using the grave/tilde button in the bottom-left of the keyb
 
 - Turn off General > Window > Adjust window when changing font size
 
-- Profiles > Terminal > Scrollback lines: 20,000
+- Profiles > Terminal > Scrollback lines: 10,000
 
-## Fonts
+Restore favourite profile and colours from:
 
-Grab Hasklug Nerd Font Complete from Joey's Dropbox.  (Can also grab Lucida Console and Lucida TypeWriter if you like.)
+- https://www.dropbox.com/home/preferences/iterm_profiles
+- https://www.dropbox.com/home/preferences/iterm_colors
 
 ## Screen zoom
 
