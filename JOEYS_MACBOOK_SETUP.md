@@ -206,7 +206,9 @@ After downloading, drag and drop these into the FontBook application.
 
 ## Settings for iTerm2
 
-- Appearance > Tab bar location: Bottom
+- Appearance > General > Tab bar location: Bottom
+
+- Appearance > Tabs > Show tab bar even when there is only one tab: 
 
 - Profile > Colors > Color Presets > Import > Jargo (Joey's Argonaut)
 
