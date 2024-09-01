@@ -37,8 +37,6 @@ brew install coreutils gnu-sed findutils
 brew install bash gnu-tar
 brew install macvim
 brew install fzf ripgrep bat tmux
-# Surprisingly light
-brew install docker docker-compose
 # gnupg takes quite a long time (many dependencies)
 brew install gnupg
 ```
@@ -75,6 +73,12 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 brew install --without-node yarn
 ```
 
+To install Docker Desktop:
+```bash
+brew install --cask docker
+# Then open "Docker" from Spotlight (Cmd-Space) and log in
+```
+
 MongoDB:
 ```bash
 brew install mongodb
@@ -88,16 +92,18 @@ If you are planning to do Android development, you will need:
 - Gradle (`brew install gradle`)
 
 Optional (but nice to have):
+
 ```bash
 brew install dict ctags nmap ripgrep
 brew install zsh zsh-completions zsh-syntax-highlighting
+brew install --cask gimp
+brew install --cask inkscape imagemagick
 brew install youtube-dl
-brew cask install gimp
+brew install --cask mpv
+
 # Big and slow to compile
 brew install geeqie
 brew cask install xquartz
-brew cask install inkscape
-brew cask install imagemagick # many dependencies
 brew install mplayer
 ```
 
@@ -121,6 +127,23 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
 # Desktop
+
+## Mouse and trackpad
+
+If you want the trackpad to use natural scrolling, but the mouse to use unnatural scrolling, then you need to install an app! ([github](https://github.com/ther0n/UnnaturalScrollWheels))
+
+```bash
+brew install --cask unnaturalscrollwheels
+```
+
+Then open Spotlight and open "unnaturalScrollWheels".  In settings you may need to toggle "Invert vertical scrolling" off, apply and then back on again.
+
+## Keyboard mapping
+
+To get Control when pressing CapsLock:
+- Open System Preferences
+- Open "Keyboard" and then click the "Modifier Keys..." button
+- Change "Caps Lock" to "Control"
 
 To get Escape when pressing Control (for OLD versions of Mac OS X, before Sierra):
 - Install [Karabiner](https://pqrs.org/osx/karabiner/history.html)
@@ -158,6 +181,10 @@ Your Fn and Control keys may be swapped, compared to PC keyboards.  You can swap
   However, if you have already swapped Fn and Ctrl, then this may apply to the wrong key.
 
 - Alternatively, try ["left_option twice toggle to get into vim-like hjkl arrows in specified apps"](https://ke-complex-modifications.pqrs.org/#toggle_vim)
+
+## Manipulating windows with keyboard
+
+Suggest: Try out Rectangle before any of these.
 
 (OLD) Install [Spectacle](https://www.spectacleapp.com/) to allow easy manipulation of windows.
 - Maximize (gone):        <kbd>Ctrl-Opt-Cmd-M</kbd>
@@ -209,6 +236,8 @@ After downloading, drag and drop these into the FontBook application.
 - Appearance > General > Tab bar location: Bottom
 
 - Appearance > Tabs > Show tab bar even when there is only one tab: 
+
+- Appearance > Tabs > Show tab bar even when there is only one tab
 
 - Profile > Colors > Color Presets > Import > Jargo (Joey's Argonaut)
 
