@@ -37,9 +37,14 @@ brew install coreutils gnu-sed findutils
 brew install bash gnu-tar
 brew install macvim
 brew install fzf ripgrep bat tmux
+# Disables bluetooth when the Macbook goes to sleep (useful if you want to connect your headphones to something else!)
+brew install bluesnooze
 # gnupg takes quite a long time (many dependencies)
 brew install gnupg
+brew install --cask tigervnc-viewer
 ```
+
+You will need to run bluesnooze once to set it up.  It will appear in the taskbar.
 
 If you want colours to work in ls, you can either:
 
@@ -94,7 +99,7 @@ If you are planning to do Android development, you will need:
 Optional (but nice to have):
 
 ```bash
-brew install dict ctags nmap ripgrep
+brew install dict ctags nmap
 brew install zsh zsh-completions zsh-syntax-highlighting
 brew install --cask gimp
 brew install --cask inkscape imagemagick
@@ -161,11 +166,13 @@ To get Escape when pressing Control (from Sierra onwards):
 To avoid accidentally triggering <kbd>Escape</kbd> after pressing and releasing <kbd>Control</kbd>:
 - Switch to the "Parameters" sub-tab and change `to_if_alone_timeout_milliseconds` from 1000 to 200
 
-Your Fn and Control keys may be swapped, compared to PC keyboards.  You can swap them back, using:
+Your Fn and Control keys may be swapped, compared to PC keyboards.  If you haven't done it already, you can swap them back, using:
 
-- Not recommended (causes incompatibilities elsewhere): Keyboard > Keyboard Shortcuts > Modifier Keys
+- Keyboard > Keyboard Shortcuts > Modifier Keys > Swap Control and Globe
 
-- Recommended: [Do it](https://apple.stackexchange.com/a/313244/159962) in Karabiner Elements
+  (This was originally marked as "not recommended" but it seems ok now. But check compatibility with external keyboard.)
+
+- Alternative: [Do it](https://apple.stackexchange.com/a/313244/159962) in Karabiner Elements
 
   - Under Karabiner Elements > Simple Modifications > For all devices, set:
 
@@ -181,6 +188,12 @@ Your Fn and Control keys may be swapped, compared to PC keyboards.  You can swap
   However, if you have already swapped Fn and Ctrl, then this may apply to the wrong key.
 
 - Alternatively, try ["left_option twice toggle to get into vim-like hjkl arrows in specified apps"](https://ke-complex-modifications.pqrs.org/#toggle_vim)
+
+## More keyboard settings
+
+- Keyboard > Keyboard navigation: On (to move around controls via Tab)
+
+- Keyboard > Keyboard shortcuts > Function keys > Use F1, F2 etc. keys as standard keys: Disable (to get media controls more easily)
 
 ## Manipulating windows with keyboard
 
@@ -244,6 +257,8 @@ After downloading, drag and drop these into the FontBook application.
 - Turn off General > Window > Adjust window when changing font size
 
 - Profiles > Terminal > Scrollback lines: 10,000
+- Profiles > Terminal > Silence bell: On
+- Profiles > Terminal > Flash visual bell: On
 
 Restore favourite profile and colours from:
 
@@ -256,3 +271,10 @@ Go to System Settings > Accessibility > Zoom and set "Use scroll guesture with m
 
 I set the `Option` key plus scroll to zoom in and out of the desktop.
 
+## Final setup
+
+Git might only start working after you have accepted the Xcode/developers license. When it is working, you will need to setup your passcode.
+
+In `~/.gitconfig`, ensure `credentials.helper = osxkeychain`
+
+Now try a `git push` on one of your private repos (e.g. `~/Dropbox/cheatsheets`) to get prompted for your passcode.
