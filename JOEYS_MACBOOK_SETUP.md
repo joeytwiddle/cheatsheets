@@ -174,13 +174,6 @@ Your Fn and Control keys may be swapped, compared to PC keyboards.  If you haven
 
 - Alternative: [Do it](https://apple.stackexchange.com/a/313244/159962) in Karabiner Elements
 
-  - Under Karabiner Elements > Simple Modifications > For all devices, set:
-
-    - fn -> left_control
-    - left_control -> fn
-
-    - grave_accent_and_tilde -> backslash (I find this useful for UK keyboard layout, where that button is unused)
-
 - If you did not do the above, then you may like to do this: To get PageUp/PageDown when pressing Fn-Up/Down, install the ["FN + Arrow Keys" rule](https://ke-complex-modifications.pqrs.org/#fn_arrows) for Karabiner Elements.
 
 - To get arrow keys when pressing Opt-H/J/K/L, install the ["Map Left Option plus h/j/k/l to Arrows" rule]() for Karabiner Elements.
@@ -227,13 +220,13 @@ Install [Hammerspoon](https://www.hammerspoon.org/) and configure it with [Shift
 
 If you have a MacBook with a UK layout, but are accustomed to keys in a US layout, then you may like to reconfigure some keys.
 
-Convert Alt-§ into Alt-backtick using [these instructions](https://apple.stackexchange.com/a/401673/159962).
+Convert Alt-§ into Alt-backtick using [these instructions](https://apple.stackexchange.com/a/401673/159962).  Last time `launchctl` was producing an error `Load failed: 5: Input/output error`, so I ended up [using Automator](https://web.archive.org/web/20231119010622/https://kitcross.net/remapping-tilde-key-macos/) to run `hidutil` on startup.
 
-Swap `£` and `#` using the "Exchange £ and #" rule from [here](https://ke-complex-modifications.pqrs.org/?q=british).
+Swap `£` and `#` using the "Exchange £ and #" rule from [here](https://ke-complex-modifications.pqrs.org/?q=british).  You may need to edit it to remove the conditions that make it only work on a specific keyboard.
 
 Since we are now not using the grave/tilde button in the bottom-left of the keyboard, we can repurpose it to backslash and pipe: To do that, under Karabiner Elements > Simple Modifications > For all devices, set:
 
-- grave_accent_and_tilde -> backslash (I find this useful for UK keyboard layout, where that button is unused)
+- Controls and symbols > grave_accent_and_tilde -> Controls and symbols > backslash (I find this useful for UK keyboard layout, where that button is otherwise unused)
 
 ## Fonts
 
