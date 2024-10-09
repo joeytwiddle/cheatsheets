@@ -43,6 +43,12 @@ To ignore semver:
 yarn upgrade-interactive --latest
 ```
 
+### Installing different versions of node
+
+[nvm](https://github.com/nvm-sh/nvm) is a popular solution.
+
+[fnm](https://github.com/Schniz/fnm) is a modern alternative with similar goals.
+
 ### Clean cache (to reclaim disk space)
 ```bash
 du -sh "$HOME"/.npm/_cacache
