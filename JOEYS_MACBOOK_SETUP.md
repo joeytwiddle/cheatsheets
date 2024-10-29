@@ -98,8 +98,14 @@ brew install --without-node yarn
 
 To install Docker Desktop:
 ```bash
-brew install --cask docker
+#brew install --cask docker
 # Then open "Docker" from Spotlight (Cmd-Space) and log in
+
+# Or for a more lightweight docker installation
+brew install docker
+brew install colima
+brew services start colima
+# Although note that colima has to fetch many other packages, including python and qemu
 ```
 
 MongoDB:
@@ -218,6 +224,8 @@ Your Fn and Control keys may be swapped, compared to PC keyboards.  If you haven
 - Keyboard > Keyboard navigation: On (to move around controls via Tab)
 
 - Keyboard > Keyboard shortcuts > Function keys > Use F1, F2 etc. keys as standard keys: Disable (to get media controls more easily)
+
+- Keyboard > Dictation > Shortcut: I switched it to "Press Right Command Key Twice" (because it was on "Press Control Key Twice" which was far too easy to trigger accidentally)
 
 ## Manipulating windows with keyboard
 
