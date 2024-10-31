@@ -63,6 +63,8 @@ and: http://support.apple.com/kb/ht1343 (doesn't seem to include Mission Control
 
     Screenshot a window:                Cmd-Shift-4 then Space then click it
 
+    Copy screenshot to clipboard:       Use above keybinds but also hold Ctrl
+
     Record a short video:               Cmd-Shift-5
 
     Toggle maximize in iTerm:           Cmd-Opt-Equals
