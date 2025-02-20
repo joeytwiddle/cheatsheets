@@ -104,8 +104,17 @@ To install Docker Desktop:
 # Or for a more lightweight docker installation
 brew install docker
 brew install colima
-brew services start colima
 # Although note that colima has to fetch many other packages, including python and qemu
+# This didn't do much for me:
+#sudo brew services start colima
+# But this did the job
+colima start
+# However, when building you may see the error: "the --mount option requires BuildKit"
+# To fix that:
+brew install docker-buildx
+# and follow the instructions to add cliPluginsExtraDirs to the docker config
+# This didn't work for me, with or without swarm init
+echo "my_secret_value" | docker secret create foo -
 ```
 
 MongoDB:
@@ -134,6 +143,9 @@ brew install --cask mpv
 brew install geeqie
 brew cask install xquartz
 #brew install mplayer
+
+# Won't open if installed normally
+brew install --no-quarantine libreoffice
 ```
 
 Better to install GIMP from [their website](https://www.gimp.org/downloads/).  (One of my Macbooks refused to run the Homebrew version.)
@@ -284,6 +296,10 @@ After downloading, drag and drop these into the FontBook application.
 
 ## Settings for iTerm2
 
+In macOS, give iTerm full disk access, otherwise you will (eventually) get a lot of dialogues asking if iTerm can access specific folders.
+
+- Go to: System Settings > Full Disk Access, and enable for iTerm
+
 Instead of configuring all the various settings below, you can load them from a file:
 
 - Go to Settings > General > Settings
@@ -307,6 +323,8 @@ If you didn't load the settings file above, then you could make the following ch
 - Profiles > Terminal > Silence bell: On
 - Profiles > Terminal > Flash visual bell: On
 
+- Profiles -> General -> Working Directory set Reuse previous session's directory (might not work until restart)
+
 - ...
 
 Restore favourite profile and colours from:
@@ -327,3 +345,9 @@ Git might only start working after you have accepted the Xcode/developers licens
 In `~/.gitconfig`, ensure `credentials.helper = osxkeychain`
 
 Now try a `git push` on one of your private repos (e.g. `~/Dropbox/cheatsheets`) to get prompted for your passcode.
+
+## Other apps of interest
+
+- [Stats](https://github.com/exelban/stats) for showing stats in the menu bar. However, I found this didn't work too well on Apple M1 Max in January 2025.
+- Alfred - non-free app launcher, faster than Spotlight
+- Raycast - non-free app launcher, faster than Spotlight, and with clipboard history
