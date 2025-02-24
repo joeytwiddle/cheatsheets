@@ -309,28 +309,36 @@ Instead of configuring all the various settings below, you can load them from a 
 
 If you didn't load the settings file above, then you could make the following changes manually:
 
-- Appearance > General > Tab bar location: Bottom
+Restore favourite profile and colours from:
 
-- Appearance > Tabs > Show tab bar even when there is only one tab: 
+- https://www.dropbox.com/home/preferences/iterm_profiles
+- https://www.dropbox.com/home/preferences/iterm_colors
+
+- General > Startup > Use system window restoration settings
+
+  This may be controlled by macOS, in which case, click the yellow warning icon, which will bring you to:
+
+  - System Settings > Desktop & Dock
+
+  where you should
+
+  - Disable "Close windows when quitting an application"
+
+- General > Closing > Confirm "Quit iTerm2 (⌘Q)"
+
+- General > Window > Adjust window when changing font size: OFF
+
+- Appearance > General > Tab bar location: Bottom
 
 - Appearance > Tabs > Show tab bar even when there is only one tab
 
 - Profile > Colors > Color Presets > Import > Jargo (Joey's Argonaut)
-
-- Turn off General > Window > Adjust window when changing font size
 
 - Profiles > Terminal > Scrollback lines: 10,000
 - Profiles > Terminal > Silence bell: On
 - Profiles > Terminal > Flash visual bell: On
 
 - Profiles -> General -> Working Directory set Reuse previous session's directory (might not work until restart)
-
-- ...
-
-Restore favourite profile and colours from:
-
-- https://www.dropbox.com/home/preferences/iterm_profiles
-- https://www.dropbox.com/home/preferences/iterm_colors
 
 ## Screen zoom
 
