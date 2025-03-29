@@ -1,6 +1,6 @@
 See also: Apparently this offers a customisable auto-setup: https://github.com/minamarkham/formation
 
-Go to App Store and start downloading XCode first, because it is big.  XCode is needed for homebrew.
+Go to App Store and start downloading XCode first, because it is big.  XCode is needed for homebrew.  (You might be able to install only the tools, but if you might later engage in development using XCode, then perhaps tidier just get the whole thing.)
 
 Open Safari, install Chrome, iTerm2 and homebrew.
 
@@ -15,6 +15,7 @@ In System Preferences:
   (The web recommends Cmd-Shift-Equals, but Cmd-Opt-Equals fit with iTerm.  However, only Ctrl-Cmd-Equals works with VSCode.)
   See [step 3 here](http://osxdaily.com/2013/03/22/5-simple-window-management-keyboard-shortcuts-to-improve-workflow-in-mac-os-x/)
   I wanted to map this to `Opt-Z` to match my Linux, but for some reason that binding would not respond.
+  Note: This (somewhat inconsistent) binding may no longer be needed.  Try Fn-Ctrl-C or F instead.
 
 In case you choose to remap Ctrl-Left and Ctrl-Right in future, you can make desktop switching like Linux by doing:
 
@@ -239,9 +240,50 @@ Your Fn and Control keys may be swapped, compared to PC keyboards.  If you haven
 
 - Keyboard > Dictation > Shortcut: I switched it to "Press Right Command Key Twice" (because it was on "Press Control Key Twice" which was far too easy to trigger accidentally)
 
+Sequoia introduced shortcuts for tiling windows.  But I like to use the following two for moving tabs left/right in Firefox.  So I need to disable them.  To disable them, we actually need to [assign them to something else](https://www.reddit.com/r/MacOSBeta/comments/1e26ljh/comment/lt57o3a/).  (Strangely, in Chrome these shortcuts only move the tabs, but in Firefox they both move the tabs _and_ tile Firefox, which is the problem.)
+
+- Keyboard > Keyboard shorcuts > App Shortcuts > +, then set:
+
+  - Application: All Applications
+  - Menu Title: Top
+  - Keyboard Shortcut: Ctrl+Opt+Up (or whatever)
+
+  Do the same for `Bottom`, then (perhaps with Shift added) for `Top & Bottom`, `Bottom & Top`
+
+  (The original shortcuts for Top/Bottom tiling can be found in the menu bar under Window > Move & Resize > Halves > Top / Bottom)
+
 ## Manipulating windows with keyboard
 
-Suggest: Try out Rectangle before any of these.
+Since Sequoia, we now have:
+
+    Maximize ('Fill')                   Fn-Ctrl-F
+    Centralise ('Center')               Fn-Ctrl-C
+    Restore original size ('Return'?)   Fn-Ctrl-R
+
+I tried remapping `Fill` to `Opt-Z` but none worked except for `Cmd-Opt-Z`
+
+On Linux I `Push Down` with `Meta-Alt-J` but the same stroke `Cmd-Opt-J` on macOS should probably be reserved for opening the DevTools.
+
+Tiling:
+
+    Tile 'Left'                         Fn-Ctrl-Left         (my remap: Cmd-Opt-Left)
+    Tile 'Right'                        Fn-Ctrl-Right        (my remap: Cmd-Opt-Right)
+    Tile 'Top'                          Fn-Ctrl-Up           (my remap: Cmd-Opt-Up)
+    Tile 'Bottom'                       Fn-Ctrl-Down         (my remap: Cmd-Opt-Down)
+    Below are fine, but above are a problem, because Cmd-Opt-Left and Right switch tabs in Chrome
+    Tile 'Top & Bottom'                 Fn-Ctrl-Shift-Up     (my remap: Cmd-Opt-Shift-Up)
+    Tile 'Bottom & Top'                 Fn-Ctrl-Shift-Down   (my remap: Cmd-Opt-Shift-Down)
+    Tile 'Left & Right'                 Fn-Ctrl-Shift-Left   (my remap: Cmd-Opt-Shift-Left)
+    Tile 'Right & Left'                 Fn-Ctrl-Shift-Right  (my remap: Cmd-Opt-Shift-Right)
+
+Mappings which did not work out:
+
+    Default Fn-Ctrl-Up/Down move tabs left/right in Chrome and Firefox
+    Cmd-Opt-Left and Right switch tabs in Chrome
+
+Note that the default settings for `Top` and `Bottom` end up tiling poor Firefox when I try to move tabs left or right.
+
+(OLD) Suggest: Try out Rectangle before any of these.
 
 (OLD) Install [Spectacle](https://www.spectacleapp.com/) to allow easy manipulation of windows.
 - Maximize (gone):        <kbd>Ctrl-Opt-Cmd-M</kbd>
@@ -271,7 +313,7 @@ Install [Hammerspoon](https://www.hammerspoon.org/) and configure it with [Shift
 
 If you have a MacBook with a UK layout, but are accustomed to keys in a US layout, then you may like to reconfigure some keys.
 
-The `§ / ±` key below `Escape` may be more familiar if it performs `\` / ~`.  This will also enable `Alt-§` to cycle windows in the same app (usually `Alt-backtick`).  To configure that:
+The `§ / ±` key below `Escape` may be more familiar if it performs `Backtick / Tilde`.  This will also enable `Alt-§` to cycle windows in the same app (usually `Alt-backtick`).  To configure that:
 
 - OLD: [these instructions](https://apple.stackexchange.com/a/401673/159962).  Last time `launchctl` was producing an error `Load failed: 5: Input/output error`, so I ended up [using Automator](https://web.archive.org/web/20231119010622/https://kitcross.net/remapping-tilde-key-macos/) to run `hidutil` on startup.
 

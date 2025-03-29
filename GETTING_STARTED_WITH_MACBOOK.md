@@ -69,12 +69,16 @@ and: http://support.apple.com/kb/ht1343 (doesn't seem to include Mission Control
 
     Toggle maximize in iTerm:           Cmd-Opt-Equals
 
-    Toggle maximize in other apps:      You need to create a shortcut called "Zoom" in the Keyboard section of System Preferences.  (I put it on Opt-Cmd-Equals)
+    Toggle maximize in other apps:      You need to create a shortcut called "Zoom" in the Keyboard section of System Preferences.  (I put it on Ctrl-Cmd-Equals)
 
           (Note that Zoom will only horizontally maximize a window to fit the content; it won't fill the screen if it doesn't need to.)
 
     Toggle fullscreen:                  Cmd-Ctrl-F
                   or (works in Chrome): Cmd-Shift-F
+
+    Maximize ('Fill')                   Fn-Ctrl-F
+    Centralise ('Center')               Fn-Ctrl-C
+    Restore original size ('Return'?)   Fn-Ctrl-R
 
     Enter special characters:           Ctrl-Cmd-Space
 
@@ -130,7 +134,7 @@ Users of Windows laptops and PCs are accustomed to the Control key appearing in 
 If you use Ctrl a lot, and you wish the Macbook's Fn and Control keys were the opposite way around, you can try:
 
 - OLD: http://moox.io/blog/switch-ctrl-fn-keys-macbook-keyboard/
-- NEW: You can do this in System Settings > Keyboard > Keyboard Shortcuts > Modifier Keys.  Swap "Globe" and "Control" keys.
+- NEW: You can do this in System Settings > Keyboard > Keyboard Shortcuts > Modifier Keys.  Select the relevant keyboard, and then swap "Globe" and "Control" keys.
 
 Alternatively you can do what old Unix keyboard did: put the Control key on the "home row", where Caps Lock is.  This can be done in the Keyboard settings dialog mentioned earlier.  http://en.wikipedia.org/wiki/Caps_lock#Caps_Lock_versus_Control_key  (The contemporary positioning of the Caps Lock key on PC keyboards was such a big mistake, the manufacturers put a step on the key to make it harder to hit it by accident!)
 

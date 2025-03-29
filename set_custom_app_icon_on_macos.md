@@ -24,4 +24,6 @@ Downsides of this method:
 
 - You end up with two instances of the same application just with different icons. They still work functionally identically, but they have different icons.
 
-- Your app with the custom icon will be the second one offered by Spotlight, Alfred and Raycast, not the first.
+- For a while, your app with the custom icon will be the second one offered by Spotlight, Alfred and Raycast, not the first, although if you keep choosing it, it may get moved to the top.
+
+- If macOS restores your apps after restarting, it will likely load the official app, rather than your tweaked version. So after a restart, you may need to quit those apps, so you can start your tweaked versions.
