@@ -23,6 +23,71 @@ In case you choose to remap Ctrl-Left and Ctrl-Right in future, you can make des
 
 - If you also want to free up Ctrl-Up and Ctrl-Down, then disable "Application windows" and "Mission Control" here
 
+# Git
+
+Git might only start working after you have accepted the Xcode/developers license.
+
+```bash
+sudo xcodebuild -license
+```
+
+When it is working, you will need to setup your passcode.
+
+In `~/.gitconfig`, ensure `credentials.helper = osxkeychain`
+
+Now try a `git push` on one of your private repos (e.g. `~/Dropbox/cheatsheets`) to get prompted for your passcode.
+
+# Settings for iTerm2
+
+In macOS, give iTerm full disk access, otherwise you will (eventually) get a lot of dialogues asking if iTerm can access specific folders.
+
+- Go to: System Settings > Privacy & Security > Full Disk Access, and enable for iTerm
+
+Instead of configuring all the various settings below, you can load them from a file:
+
+- Go to Settings > General > Settings
+- Enable "Load settings from a custom folder or URL"
+- Select the folder `.../preferences_sync/preferences/iterm_settings`
+- Restarting iTerm (to load the new settings)
+- Then enable "Save changes: Automatically"
+
+If you didn't load the settings file above, then you could make the following changes manually:
+
+Restore favourite profile and colours from:
+
+- https://www.dropbox.com/home/preferences/iterm_profiles
+- https://www.dropbox.com/home/preferences/iterm_colors
+
+- General > Startup > Use system window restoration settings
+
+  This may be controlled by macOS, in which case, click the yellow warning icon, which will bring you to:
+
+  - System Settings > Desktop & Dock
+
+  where you should
+
+  - Disable "Close windows when quitting an application"
+
+- General > Closing > Confirm "Quit iTerm2 (⌘Q)"
+
+- General > Closing > Disable all confirmations on system shutdown, restart and log out
+
+  (This is useful when an auto-update is applied during the night.  Without it, you will wake up with all your apps closed, iTerm asking for confirmation, and no updates applied!)
+
+- General > Window > Adjust window when changing font size: OFF
+
+- Appearance > General > Tab bar location: Bottom
+
+- Appearance > Tabs > Show tab bar even when there is only one tab
+
+- Profile > Colors > Color Presets > Import > Jargo (Joey's Argonaut)
+
+- Profiles > Terminal > Scrollback lines: 10,000
+- Profiles > Terminal > Silence bell: On
+- Profiles > Terminal > Flash visual bell: On
+
+- Profiles -> General -> Working Directory set Reuse previous session's directory (might not work until restart)
+
 # Make Finder show hidden files
 
 ## New way
@@ -336,65 +401,11 @@ Grab Hasklug Nerd Font Complete from Joey's Dropbox.  (Can also grab Lucida Cons
 
 After downloading, drag and drop these into the FontBook application.
 
-## Settings for iTerm2
-
-In macOS, give iTerm full disk access, otherwise you will (eventually) get a lot of dialogues asking if iTerm can access specific folders.
-
-- Go to: System Settings > Full Disk Access, and enable for iTerm
-
-Instead of configuring all the various settings below, you can load them from a file:
-
-- Go to Settings > General > Settings
-- Enable "Load settings from a custom folder or URL"
-- Select the folder `.../preferences_sync/preferences/iterm_settings`
-- Also enable "Save changes: Automatically"
-
-If you didn't load the settings file above, then you could make the following changes manually:
-
-Restore favourite profile and colours from:
-
-- https://www.dropbox.com/home/preferences/iterm_profiles
-- https://www.dropbox.com/home/preferences/iterm_colors
-
-- General > Startup > Use system window restoration settings
-
-  This may be controlled by macOS, in which case, click the yellow warning icon, which will bring you to:
-
-  - System Settings > Desktop & Dock
-
-  where you should
-
-  - Disable "Close windows when quitting an application"
-
-- General > Closing > Confirm "Quit iTerm2 (⌘Q)"
-
-- General > Window > Adjust window when changing font size: OFF
-
-- Appearance > General > Tab bar location: Bottom
-
-- Appearance > Tabs > Show tab bar even when there is only one tab
-
-- Profile > Colors > Color Presets > Import > Jargo (Joey's Argonaut)
-
-- Profiles > Terminal > Scrollback lines: 10,000
-- Profiles > Terminal > Silence bell: On
-- Profiles > Terminal > Flash visual bell: On
-
-- Profiles -> General -> Working Directory set Reuse previous session's directory (might not work until restart)
-
 ## Screen zoom
 
 Go to System Settings > Accessibility > Zoom and set "Use scroll guesture with modifier key"
 
 I set the `Option` key plus scroll to zoom in and out of the desktop.
-
-## Final setup
-
-Git might only start working after you have accepted the Xcode/developers license. When it is working, you will need to setup your passcode.
-
-In `~/.gitconfig`, ensure `credentials.helper = osxkeychain`
-
-Now try a `git push` on one of your private repos (e.g. `~/Dropbox/cheatsheets`) to get prompted for your passcode.
 
 ## Other apps of interest
 
