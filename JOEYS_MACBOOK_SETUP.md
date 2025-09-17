@@ -4,10 +4,13 @@ Go to App Store and start downloading XCode first, because it is big.  XCode is 
 
 Open Safari, install Chrome, iTerm2 and homebrew.
 
-In System Preferences:
+# Essential keyboard and pointer setup
+
+In System Settings:
 - Under Trackpad -> Point & Click, enable "Tap to click".
 - Under Trackpad -> More Gestures, disable "Swipe between pages" (the annoying thing that happens when you accidentally swipe with three fingers)
 - Under Accessibility -> Pointer Control -> Trackpad Options, set Dragging Style to "Without Drag Lock" ([docs](https://support.apple.com/en-gb/guide/mac-help/unac899/14.0/mac/14.0#:~:text=Without%20Drag%20Lock%3A%20Double%2Dtap,the%20edge%20of%20the%20trackpad))
+- Under Keyboard, set Keyboard navigation to "On" (to move around controls via Tab)
 - Under Keyboard, set "Key repeat rate" and "Delay until repeat" to far right (fastest) settings.
 - Under Keyboard -> Keyboard Shortcuts -> Function Keys, disable "Use F1, F2, ... as standard function keys" (for easier access to media controls)
 - Under Keyboard -> Keyboard Shortcuts -> Modifier Keys, set Caps Lock to perform Control.
@@ -115,12 +118,14 @@ brew install less
 brew install fzf ripgrep bat tmux
 # Disables bluetooth when the Macbook goes to sleep (useful if you want to connect your headphones to something else!)
 brew install bluesnooze
-# gnupg takes quite a long time (many dependencies)
+# For old sbash (gnupg takes quite a long time, due to many dependencies)
 brew install gnupg
+# For new sbash
+brew install --cask macfuse && brew install gromgit/fuse/encfs-mac
 brew install --cask tigervnc-viewer
 ```
 
-You will need to run bluesnooze once to set it up.  It will appear in the taskbar.
+You will need to open Bluesnooze once, and when it apepars in the taskbar (a crescent moon icon) you should enable "Launch at login".
 
 OLD: If you want colours to work in ls, you can either:
 
@@ -155,11 +160,7 @@ git clone https://github.com/joeytwiddle/git-aware-prompt
 
 Install nvm and then yarn:
 ```bash
-# Follow instructions here: https://github.com/creationix/nvm
-# For example:
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-
-brew install --without-node yarn
+npm install -g yarn
 ```
 
 To install Docker Desktop:
@@ -201,7 +202,8 @@ Optional (but nice to have):
 brew install dict ctags nmap
 brew install zsh zsh-completions zsh-syntax-highlighting
 #brew install --cask gimp
-brew install --cask inkscape imagemagick
+brew install imagemagick
+brew install --cask inkscape
 #brew install youtube-dl
 brew install --cask mpv
 
@@ -216,7 +218,7 @@ brew install --no-quarantine libreoffice
 
 Better to install GIMP from [their website](https://www.gimp.org/downloads/).  (One of my Macbooks refused to run the Homebrew version.)
 
-### VSCode
+# VSCode
 
 ```bash
 cd ~/Library/"Application Support"
@@ -249,7 +251,7 @@ Then open Spotlight and open "unnaturalScrollWheels".  In settings you may need 
 
 If you want to click both mouse buttons at the same to to generate a middle-click, try installing [Middle](https://middleclick.app/) app.  Unfortunately, it didn't work with my external mouse.
 
-If you want to move and resize windows convenients (like Alt-click-drag on Xwindows) there are some options for macOS which provide partial behaviour: https://superuser.com/questions/53051/altclick-drag-window-resizing-on-a-mac-similar-to-x-windows
+If you want to move and resize windows conveniently (like Alt-click-drag on Xwindows) there are some options for macOS which provide partial behaviour: https://superuser.com/questions/53051/altclick-drag-window-resizing-on-a-mac-similar-to-x-windows
 
 ## Keyboard mapping
 
@@ -298,10 +300,6 @@ Your Fn and Control keys may be swapped, compared to PC keyboards.  If you haven
   - https://ke-complex-modifications.pqrs.org/
 
 ## More keyboard settings
-
-- Keyboard > Keyboard navigation: On (to move around controls via Tab)
-
-- Keyboard > Keyboard shortcuts > Function keys > Use F1, F2 etc. keys as standard keys: Disable (to get media controls more easily)
 
 - Keyboard > Dictation > Shortcut: I switched it to "Press Right Command Key Twice" (because it was on "Press Control Key Twice" which was far too easy to trigger accidentally)
 
