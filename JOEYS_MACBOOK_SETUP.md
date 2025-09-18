@@ -1,6 +1,6 @@
 See also: Apparently this offers a customisable auto-setup: https://github.com/minamarkham/formation
 
-Go to App Store and start downloading XCode first, because it is big.  XCode is needed for homebrew.  (You might be able to install only the tools, but if you might later engage in development using XCode, then perhaps tidier just get the whole thing.)
+If you don't have Xcode installed, go to the App Store and start downloading that first, because it is big, and it is needed for homebrew.  (You might be able to install only the tools, but if you might later engage in development using XCode, then perhaps it's tidier to just get the whole thing.)
 
 Open Safari, install Chrome, iTerm2 and homebrew.
 
@@ -44,7 +44,11 @@ Now try a `git push` on one of your private repos (e.g. `~/Dropbox/cheatsheets`)
 
 In macOS, give iTerm full disk access, otherwise you will (eventually) get a lot of dialogues asking if iTerm can access specific folders.
 
-- Go to: System Settings > Privacy & Security > Full Disk Access, and enable for iTerm
+- System Settings > Privacy & Security > Full Disk Access, and enable for iTerm
+
+Another macOS setting you need is:
+
+- System Settings > Desktop & Dock > Windows > Close windows when quitting an application: Turn this OFF if you want iTerm to remember your tabs after a restart
 
 Instead of configuring all the various settings below, you can load them from a file:
 
@@ -89,22 +93,16 @@ Restore favourite profile and colours from:
 - Profiles > Terminal > Silence bell: On
 - Profiles > Terminal > Flash visual bell: On
 
-- Profiles -> General -> Working Directory set Reuse previous session's directory (might not work until restart)
+- Profiles -> General -> Working Directory set Reuse previous session's directory (might not work until restart, might require shell integration?)
 
-# Make Finder show hidden files
+# Fonts
 
-## New way
+Grab Lucida Console and Lucida Typewriter (and maybe also Hasklug Nerd Font Complete) from Joey's Dropbox.
 
-In Finder, hit `Cmd-Shift-.` to toggle hidden file display.  This appears to persist between reboots, so job done.
+- https://www.dropbox.com/home/fonts/custom_nerdfonts
+- https://www.dropbox.com/home/fonts/FOR_MAC
 
-## Old way
-
-In terminal, type:
-```bash
-defaults write com.apple.finder AppleShowAllFiles YES
-```
-
-To see it working immediately, find Finder in the Dock, hold Option, right-click it and select Relaunch.
+After downloading, drag and drop these into the FontBook application.
 
 # Install various useful software with Homebrew
 
@@ -239,6 +237,21 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 # Desktop
 
+## Menu bar
+
+In System Settings, go to Control Centre and:
+
+- Set Bluetooth to "Show in Menu Bar"
+- Set Spotlight to "Don't show in Menu Bar"
+
+If you want to re-arrange the menu bar icons, hold Command and drag them around.
+
+## Battery
+
+In System Settings, go to Battery and:
+
+- Set Low Power Mode to "Only on Battery".  This means you can work for longer on battery before the power runs out, but the machine will be slightly slower when on battery.
+
 ## Mouse and trackpad
 
 If you want the trackpad to use natural scrolling, but the mouse to use unnatural scrolling, then you need to install an app! ([github](https://github.com/ther0n/UnnaturalScrollWheels))
@@ -252,6 +265,21 @@ Then open Spotlight and open "unnaturalScrollWheels".  In settings you may need 
 If you want to click both mouse buttons at the same to to generate a middle-click, try installing [Middle](https://middleclick.app/) app.  Unfortunately, it didn't work with my external mouse.
 
 If you want to move and resize windows conveniently (like Alt-click-drag on Xwindows) there are some options for macOS which provide partial behaviour: https://superuser.com/questions/53051/altclick-drag-window-resizing-on-a-mac-similar-to-x-windows
+
+## Make Finder show hidden files
+
+### New way
+
+In Finder, hit `Cmd-Shift-.` to toggle hidden file display.  This appears to persist between reboots, so job done.
+
+### Old way
+
+In terminal, type:
+```bash
+defaults write com.apple.finder AppleShowAllFiles YES
+```
+
+To see it working immediately, find Finder in the Dock, hold Option, right-click it and select Relaunch.
 
 ## Keyboard mapping
 
@@ -389,15 +417,6 @@ Since we are now not using the grave/tilde button in the bottom-left of the keyb
 - Controls and symbols > grave_accent_and_tilde -> Controls and symbols > backslash (I find this useful for UK keyboard layout, where that button is otherwise unused)
 
 Swap `£` and `#` using the "Exchange £ and #" rule from [here](https://ke-complex-modifications.pqrs.org/?q=british).  You may need to edit it to remove the conditions that make it only work on a specific keyboard.
-
-## Fonts
-
-Grab Hasklug Nerd Font Complete from Joey's Dropbox.  (Can also grab Lucida Console and Lucida TypeWriter if you like.)
-
-- https://www.dropbox.com/home/fonts/custom_nerdfonts
-- https://www.dropbox.com/home/fonts/FOR_MAC
-
-After downloading, drag and drop these into the FontBook application.
 
 ## Screen zoom
 
