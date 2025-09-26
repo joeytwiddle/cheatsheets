@@ -87,6 +87,8 @@ and: http://support.apple.com/kb/ht1343 (doesn't seem to include Mission Control
     Navigate backwards/forwards         Cmd-[ and Cmd-]
           (in Chrome, WebStorm, ...)
 
+    Lock screen                         Ctrl-Cmd-Q
+
 You can learn more shortcut keys from the menu of each application.  Command looks like a flower or four-leaf clover.  Control is the hat / upward chevron / small up arrow.  Option is the one with the crazy switch symbol (it is supposed to be an electronic switch or a railway switch).  http://osxdaily.com/2012/03/27/making-sense-of-mac-keyboard-symbols/  http://superuser.com/questions/46452/weird-symbols-for-key-combinations-on-a-mac#46459
 
 

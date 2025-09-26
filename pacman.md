@@ -20,8 +20,22 @@ Although the wiki recommends:
 
 #
 
-Remove a package (and dependencies): `pacman -Rcnsu <package_name>` (the package_name should **not** include the namespace) (Adding `-u` or doing just `-Rus` might be safer.) (I believe `-n` removes config and backup files, suitable if you don't intend to reinstall the package again in future, but not suitable if they might contain some useful configuration.)
-Remove a package (leaving dependencies installed): `pacman -R <package_name>`
+Remove a package (and dependencies): `pacman -Rcnsu <package_name>`
+- The package_name should **not** include the namespace
+- Using `-Ru` or `-Rus` might be safer.
+- I think `-n` removes config and backup files, suitable if you don't intend to reinstall the package again in future, but not suitable if they might contain some useful configuration.
+- `-c / --cascade` will also remove packages which depend on the package specified for removal.  This should only be used if you are going to review the packages suggested for removal before confirming.  In other words, DO NOT use `-c` with `--noconfirm`
+
+For pamac, a similar command might be: `pamac remove -uco <package_name>` but:
+- `--unneeded, -u` to remove packages only if they are not required by any other packages
+- `--cascade, -c` to remove all target packages, as well as all packages that depend on one or more target packages
+- `--orphans, -o` to remove dependencies that are not required by other packages, if this option is used without package name remove all orphans
+  With optionally:
+- `-n` to remove "backup" files (config files? may be cleaner)
+- `-d` to make a dry run
+- `-c` as with `pacman -R`, should only be used interactively
+
+Remove a package (but leaving dependencies installed): `pacman -R <package_name>`
 
 For faster installs we can use powerpill, which downloads files in parallel.
 
@@ -153,25 +167,18 @@ rm /var/lib/pacman/db.lck
 ### Perform recommended manjaro upgrade process
 
 ```sh
-# DO NOT USE THIS.  Use pacaur below instead!
+# NOTE: If you use pacaur or another AUR package manager, then replace pacman below with your package manager.
 sudo pacman -Sy &&
 sudo pacman -S archlinux-keyring &&
 sudo pacman -Su
 ```
 
-### Do the same, but use pacaur instead
-
-Note that this can take some time and some disk space, because some of these AUR packages are compiled from source.
-
-```sh
-pacaur -Syu
-# Experimenting:
-pacaur -Syu 2>&1 | tee ~/logs/"pacaur_update.$(geekdate -fine).log"
-```
-
 ### Reboot
 
 ```sh
+# This has probably already been done for you, but it doesn't hurt to do it again.
+# If there has been a kernel update, then pacaur will usually run update-grub for you.
+# I don't see the output of grub-install, but perhaps on modern systems, grub-install doesn't need to run every time.
 sudo update-grub
 sudo grub-install
 

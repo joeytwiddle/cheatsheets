@@ -50,10 +50,14 @@ ss -tan state syn-recv | wc -l
 
 ## See also
 
-This WILL NOT help you to monitor network I/O, because it monitors disk I/O.
+- sniffnet
 
-```bash
-# Show cumulative I/O
-iotop -a
-```
+- iotop
+
+  iotop WILL NOT really help you to monitor network I/O, because it monitors disk I/O.
+
+  ```bash
+  # Show cumulative I/O
+  iotop -a
+  ```
 

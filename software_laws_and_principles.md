@@ -35,6 +35,8 @@ RERO - Refactory Early, Refactor Often
 - Everything is a file
 - ... and many more ...
 
+[Broken Window Theorem](https://reflectoring.io/laws-and-principles-of-software-development/) - chaos invites more chaos, so avoid chaos!
+
 ## OOP specific patterns
 
 - SOLID:

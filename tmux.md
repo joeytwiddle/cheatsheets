@@ -32,6 +32,8 @@ tmux set-window-option -g window-status-current-fg colour0
 # May be preferable on newer terminals, for stronger contrast and/or to bypass the terminal's colour scheme
 #tmux set-window-option -g window-status-current-bg colour255
 #tmux set-window-option -g window-status-current-fg colour16
+# For modern tmux
+tmux set-window-option -g window-status-current-style 'fg=black bg=brightwhite'
 
 # Navigate between windows and panes with Shift-ArrowKeys
 # (Sadly these do not work through Putty on Windows, but they do through Kitty)
@@ -49,6 +51,9 @@ tmux bind-key -n C-S-Right swap-window -t +1
 
 # Since I like to name my windows, I prefer to turn this off
 tmux set-option -g allow-rename off
+
+# Increase scrollback history (default 2000 I think)
+tmux set-option -g history-limit 6000
 ```
 
 To make things clearer, I like to name each window:
@@ -93,6 +98,20 @@ tmux set-window-option -g window-status-current-fg colour232
 #tmux set-window-option -g status-fg colour238
 # Darken the text at the left and right of the bar
 tmux set-window-option -g status-fg colour232
+```
+
+# Disable the mouse
+
+```bash
+tmux set-window-option -g mouse off
+```
+
+or for older versions of tmux:
+
+```bash
+tmux set-window-option -g mouse-select-pane off
+tmux set-window-option -g mouse-resize-pane off
+tmux set-window-option -g mouse-select-window off
 ```
 
 # Search scrollback (when in copy mode)

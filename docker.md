@@ -157,7 +157,7 @@ In this case we have used `--rm` (optional) to automatically remove the containe
 
 Note that the above may not work if the Docker image has specified an entrypoint.  In such cases, we may need to override the entrypoint like so:
 
-```
+```bash
 docker run --rm -it --entrypoint /bin/bash <image_id>
 ```
 
@@ -252,6 +252,15 @@ docker import container.tgz <image_repository_name>
 ```
 
 but note that in this case the image is not layered, so it will take the full size.
+
+# Rename an image
+
+We can do this by creating a new tag for the image, and then removing the old image.
+
+```bash
+docker tag <old_image_id> <new_image_id>
+docker rmi <old_image_id>
+```
 
 
 

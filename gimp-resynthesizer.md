@@ -8,7 +8,7 @@ There are two ways you might like to do this:
 
 1. Use the entire image, minus the bit you want to regenerate
 
-2. Or, select specific parts of the image you want to use fot regeneration
+2. Or, select specific parts of the image you want to use for regeneration
 
 Choosing 1. may require less planning on your part, but risks introducing things you didn't really want to regenerate.
 

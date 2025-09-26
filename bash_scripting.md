@@ -20,3 +20,12 @@ app_data_folder="$XDG_DATA_HOME/app_name"
 ```
 
 Windows NT had a similar convention: https://unix.stackexchange.com/a/313001/33967
+
+## Using a lock to prevent two commands from running in parallel
+
+```bash
+flock -x /tmp/my_task.lck <command_1> &
+
+flock -x /tmp/my_task.lck <command_2> &
+```
+

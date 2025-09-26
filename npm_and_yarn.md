@@ -73,3 +73,11 @@ npx npkill -s size
 npx npkill
 ```
 Navigate with up/down keys, and press `<Space>` to remove the focused `node_modules` folder.
+
+### Search the npm database
+You can use this tool: https://www.npmjs.com/package/npms-cli
+```bash
+npm install -g npms-cli
+
+npms search <foo>
+```

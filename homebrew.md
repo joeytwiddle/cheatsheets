@@ -21,3 +21,16 @@ This will remove any orphaned dependencies after an uninstall.
 brew list --verbose [package_name]
 ```
 
+### List installed pacakges
+
+```bash
+brew list
+```
+
+### Get info about package
+
+```bash
+brew info [package_name]
+```
+
+This may show you how to start and stop services.

@@ -1,3 +1,11 @@
+# Startup
+
+When `atop` starts, I like to hit `c A t` to:
+
+- `c` - Show full commandlines
+- `A` - Sort automatically by most-used resource (memory, CPU, disk-io)
+- `t` - Update the view immediately
+
 # Reading log history
 
 Open today's logfile:
@@ -55,6 +63,11 @@ Instead of processes, you can display:
     j - accumulate process data by docker container
     y - break process into individual threads
     Y - sort the threads in y view
+
+You can also hit:
+
+    t - make a sample immediately and display it
+        (this can be useful to skip the startup screen)
 
 
 

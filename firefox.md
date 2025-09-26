@@ -28,3 +28,9 @@ AddonManager.getActiveAddons().then(({addons}) => {
 
 Source: https://www.reddit.com/r/firefox/comments/wqneq9/comment/iko4bl4/
 
+## How to reduce memory consumption
+
+Under Settings > Performance, uncheck "Use Recommended Settings" and uncheck "Use Hardware Acceleration"
+
+In about:config, change `browser.cache.memory.enable` from -1 to 6000000 to limit Firefox to using 6GB of memory as cache.  ([Source](https://www.reddit.com/r/firefox/comments/10ho2o8/comment/j9wjcpq/?utm_source=reddit&utm_medium=web2x&context=3))
+
