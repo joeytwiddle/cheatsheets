@@ -19,6 +19,7 @@ In System Settings:
   See [step 3 here](http://osxdaily.com/2013/03/22/5-simple-window-management-keyboard-shortcuts-to-improve-workflow-in-mac-os-x/)
   I wanted to map this to `Opt-Z` to match my Linux, but for some reason that binding would not respond.
   Note: This (somewhat inconsistent) binding may no longer be needed.  Try Fn-Ctrl-C or F instead.
+- Under Keyboard -> Text Input -> Input Sources -> Edit, uncheck the box for "Add period [full-stop] with double-space".
 
 In case you choose to remap Ctrl-Left and Ctrl-Right in future, you can make desktop switching like Linux by doing:
 
@@ -281,6 +282,15 @@ defaults write com.apple.finder AppleShowAllFiles YES
 
 To see it working immediately, find Finder in the Dock, hold Option, right-click it and select Relaunch.
 
+## Set where screenshots are saved
+
+By default screenshots save to `~/Desktop/` but I prefer to save them to `~/Screenshots/`.  To configure that:
+
+- Press `Cmd+Shift+5` to open the screenshot menu
+- Under "Options", select "Other Location..."
+
+Note that if you later replace the `Screenshots` folder with a symlink, you may need to repeat this setup.
+
 ## Keyboard mapping
 
 To get Control when pressing CapsLock:
@@ -304,7 +314,9 @@ To get Escape when pressing Control (from Sierra onwards):
 To avoid accidentally triggering <kbd>Escape</kbd> after pressing and releasing <kbd>Control</kbd>:
 - Switch to the "Parameters" sub-tab and change `to_if_alone_timeout_milliseconds` from 1000 to 200
 
-Your Fn and Control keys may be swapped, compared to PC keyboards.  If you haven't done it already, you can swap them back, using:
+Your Fn and Control keys may be swapped, compared to PC keyboards.  If you haven't done it already, you can swap them back, using the following:
+
+(Note: If you use Karabiner Elements, it might be better to do the swapping there, rather than here.)
 
 - Keyboard > Keyboard Shortcuts > Modifier Keys > Swap Control and Globe
 
