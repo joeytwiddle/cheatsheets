@@ -7,23 +7,23 @@ Open Safari, install Chrome, iTerm2 and homebrew.
 # Essential keyboard and pointer setup
 
 In System Settings:
-- Under Trackpad -> Point & Click, enable "Tap to click".
-- Under Trackpad -> More Gestures, disable "Swipe between pages" (the annoying thing that happens when you accidentally swipe with three fingers)
-- Under Accessibility -> Pointer Control -> Trackpad Options, set Dragging Style to "Without Drag Lock" ([docs](https://support.apple.com/en-gb/guide/mac-help/unac899/14.0/mac/14.0#:~:text=Without%20Drag%20Lock%3A%20Double%2Dtap,the%20edge%20of%20the%20trackpad))
+- Under Trackpad > Point & Click, enable "Tap to click".
+- Under Trackpad > More Gestures, disable "Swipe between pages" (the annoying thing that happens when you accidentally swipe with three fingers)
+- Under Accessibility > Pointer Control > Trackpad Options, set Dragging Style to "Without Drag Lock" ([docs](https://support.apple.com/en-gb/guide/mac-help/unac899/14.0/mac/14.0#:~:text=Without%20Drag%20Lock%3A%20Double%2Dtap,the%20edge%20of%20the%20trackpad))
 - Under Keyboard, set Keyboard navigation to "On" (to move around controls via Tab)
 - Under Keyboard, set "Key repeat rate" and "Delay until repeat" to far right (fastest) settings.
-- Under Keyboard -> Keyboard Shortcuts -> Function Keys, disable "Use F1, F2, ... as standard function keys" (for easier access to media controls)
-- Under Keyboard -> Keyboard Shortcuts -> Modifier Keys, set Caps Lock to perform Control.
-- Under Keyboard -> Keyboard Shortcuts -> App Shortcuts, create a new binding with action (Menu Title) "Zoom" and shortcut "Ctrl-Cmd-Equals".
+- Under Keyboard > Keyboard Shortcuts > Function Keys, disable "Use F1, F2, ... as standard function keys" (for easier access to media controls)
+- Under Keyboard > Keyboard Shortcuts > Modifier Keys, set Caps Lock to perform Control.
+- Under Keyboard > Keyboard Shortcuts > App Shortcuts, create a new binding with action (Menu Title) "Zoom" and shortcut "Ctrl-Cmd-Equals".
   (The web recommends Cmd-Shift-Equals, but Cmd-Opt-Equals fit with iTerm.  However, only Ctrl-Cmd-Equals works with VSCode.)
   See [step 3 here](http://osxdaily.com/2013/03/22/5-simple-window-management-keyboard-shortcuts-to-improve-workflow-in-mac-os-x/)
   I wanted to map this to `Opt-Z` to match my Linux, but for some reason that binding would not respond.
   Note: This (somewhat inconsistent) binding may no longer be needed.  Try Fn-Ctrl-C or F instead.
-- Under Keyboard -> Text Input -> Input Sources -> Edit, uncheck the box for "Add period [full-stop] with double-space".
+- Under Keyboard > Text Input > Input Sources > Edit, uncheck the box for "Add period [full-stop] with double-space".
 
 In case you choose to remap Ctrl-Left and Ctrl-Right in future, you can make desktop switching like Linux by doing:
 
-- Under Keyboard -> Keyboard Shortcuts -> Mission Control -> Mission Control reconfigure move left a space and move right a space to Ctrl-Cmd-Left and Ctrl-Cmd-Right.
+- Under Keyboard > Keyboard Shortcuts > Mission Control > Mission Control reconfigure move left a space and move right a space to Ctrl-Cmd-Left and Ctrl-Cmd-Right.
 
 - If you also want to free up Ctrl-Up and Ctrl-Down, then disable "Application windows" and "Mission Control" here
 
@@ -94,7 +94,7 @@ Restore favourite profile and colours from:
 - Profiles > Terminal > Silence bell: On
 - Profiles > Terminal > Flash visual bell: On
 
-- Profiles -> General -> Working Directory set Reuse previous session's directory (might not work until restart, might require shell integration?)
+- Profiles > General > Working Directory set Reuse previous session's directory (might not work until restart, might require shell integration?)
 
 # Fonts
 
