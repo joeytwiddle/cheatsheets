@@ -29,7 +29,13 @@ In case you choose to remap Ctrl-Left and Ctrl-Right in future, you can make des
 
 # Git
 
-Git might only start working after you have accepted the Xcode/developers license.
+You can get Git installed either by installing Xcode Tools, or full Xcode, or by installing Homebrew and then doing:
+
+```
+brew install git
+```
+
+If you are taking the Xcode route, Git might only start working after you have accepted the Xcode/developers license.
 
 ```bash
 sudo xcodebuild -license
