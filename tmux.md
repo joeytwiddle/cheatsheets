@@ -29,7 +29,7 @@ You can just copy-paste this into your terminal, once you are inside tmux.
 # Better compatibility with older terminal clients
 tmux set-window-option -g window-status-current-bg colour7
 tmux set-window-option -g window-status-current-fg colour0
-# May be preferable on newer terminals, for stronger contrast and/or to bypass the terminal's colour scheme
+# May be preferable on newer terminals, for stronger contrast and/or to bypass the terminal_s colour scheme
 #tmux set-window-option -g window-status-current-bg colour255
 #tmux set-window-option -g window-status-current-fg colour16
 # For modern tmux
@@ -42,12 +42,12 @@ tmux bind-key -n S-Right select-window -t +1
 tmux bind-key -n S-Up select-pane -U
 tmux bind-key -n S-Down select-pane -D
 
-# Move current window with Ctrl-Shift-Arrow-Keys (older version of tmux)
-#tmux bind-key -n C-S-Left swap-window -t -1 '\;' select-window -t -1
-#tmux bind-key -n C-S-Right swap-window -t +1 '\;' select-window -t +1
-# Move current window with Ctrl-Shift-Arrow-Keys (newer version of tmux)
-tmux bind-key -n C-S-Left swap-window -t -1
-tmux bind-key -n C-S-Right swap-window -t +1
+# Move current window with Ctrl-Shift-Arrow-Keys (older versions of tmux)
+#tmux bind-key -n C-S-Left swap-window -t -1
+#tmux bind-key -n C-S-Right swap-window -t +1
+# Move current window with Ctrl-Shift-Arrow-Keys (newer versions of tmux)
+tmux bind-key -n C-S-Left swap-window -t -1 '\;' select-window -t -1
+tmux bind-key -n C-S-Right swap-window -t +1 '\;' select-window -t +1
 
 # Since I like to name my windows, I prefer to turn this off
 tmux set-option -g allow-rename off

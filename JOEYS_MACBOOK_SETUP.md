@@ -21,6 +21,10 @@ In System Settings:
   Note: This (somewhat inconsistent) binding may no longer be needed.  Try Fn-Ctrl-C or F instead.
 - Under Keyboard > Text Input > Input Sources > Edit, uncheck the box for "Add period [full-stop] with double-space".
 
+- Mouse > Scrolling speed was set 1 left of the middle. I increased it by 3, one down from the max. But I haven't experienced the change! Perhaps it only makes a difference if the mouse wheel is analogue (mine is clicky).
+
+  Although it does seem to affect Accessibility > Zoom, if I spin the wheel, which is good!
+
 In case you choose to remap Ctrl-Left and Ctrl-Right in future, you can make desktop switching like Linux by doing:
 
 - Under Keyboard > Keyboard Shortcuts > Mission Control > Mission Control reconfigure move left a space and move right a space to Ctrl-Cmd-Left and Ctrl-Cmd-Right.
@@ -84,9 +88,11 @@ Restore favourite profile and colours from:
 
 - General > Closing > Confirm "Quit iTerm2 (⌘Q)"
 
+  (Or alternatively you can disable the keybind with: Keys > + > Assign `Cmd-Q` to "Ignore", so you won't accidentally close iTerm when accidentally pressing Cmd-Q instead of Cmd-Tab)
+
 - General > Closing > Disable all confirmations on system shutdown, restart and log out
 
-  (This is useful when an auto-update is applied during the night.  Without it, you will wake up with all your apps closed, iTerm asking for confirmation, and no updates applied!)
+  (This is useful when an auto-update is applied during the night.  Without it, you will wake up with no updates applied, but all your apps closed, except for iTerm which is asking for confirmation to close!)
 
 - General > Window > Adjust window when changing font size: OFF
 
@@ -114,8 +120,8 @@ After downloading, drag and drop these into the FontBook application.
 # Install various useful software with Homebrew
 
 ```bash
+# findutils contains find, GNU xargs, locate and updatedb
 brew install coreutils gnu-sed findutils
-# findutils contains GNU xargs
 brew install bash gnu-tar
 brew install macvim
 # GNU less avoids some annoyances that macOS less exhibits when used through my |m alias
@@ -240,6 +246,9 @@ When I press and hold `k` in VSCode, something pops up and stops it from repeati
 ```bash
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # then restart VSCode
+
+# For Cursor:
+defaults write "$(osascript -e 'id of app "Cursor"')" ApplePressAndHoldEnabled -bool false
 ```
 
 # Desktop
@@ -357,9 +366,9 @@ Sequoia introduced shortcuts for tiling windows.  But I like to use the followin
   - Menu Title: Top
   - Keyboard Shortcut: Ctrl+Opt+Up (or whatever)
 
-  Do the same for `Bottom`, then (perhaps with Shift added) for `Top & Bottom`, `Bottom & Top`
+  Do the same for `Bottom`, then *crucially* (with Shift added) for `Top & Bottom`, `Bottom & Top`
 
-  (The original shortcuts for Top/Bottom tiling can be found in the menu bar under Window > Move & Resize > Halves > Top / Bottom)
+  (The original shortcuts for Top/Bottom tiling can be found in the menu bar under Windows > Move & Resize > Halves > Top / Bottom)
 
 ## Manipulating windows with keyboard
 
