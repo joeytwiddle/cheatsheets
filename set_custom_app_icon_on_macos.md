@@ -1,4 +1,6 @@
-See: https://www.reddit.com/r/MacOS/comments/1fxwjqm/howto_change_macos_system_icons_works_on_sequoia/
+# How to set custom app icons on macOS
+
+From: https://www.reddit.com/r/MacOS/comments/1fxwjqm/howto_change_macos_system_icons_works_on_sequoia/
 
 - Open the *terminal*
 
@@ -27,3 +29,13 @@ Downsides of this method:
 - For a while, your app with the custom icon will be the second one offered by Spotlight, Alfred and Raycast, not the first, although if you keep choosing it, it may get moved to the top.
 
 - If macOS restores your apps after restarting, it will likely load the official app, rather than your tweaked version. So after a restart, you may need to quit those apps, so you can start your tweaked versions.
+
+## Handling startup
+
+Unfortunately, if you have enabled "Reopen windows when logging back in" on restart, macOS will start the apps with their default icons, rather than starting the apps you created with custom icons.
+
+The best workaround I have found for that is to disable "Reopen windows" and instead manually configure which apps to load on login:
+
+1. Go to System Settings > General > Login Items & Extensions
+2. Add to Open at Login all your regular applications, and be sure to select the apps from _your_ Applications folder, rather than the system Applications folder.
+3. The next time you perform a restart, be sure to disable "Reopen windows when logging back in".
