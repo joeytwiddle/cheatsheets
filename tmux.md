@@ -75,7 +75,8 @@ tmux rename-session "$(hostname)"
 # Set a colour by name
 tmux set-window-option -g status-bg magenta
 # Or keep running this command, until you find a colour you like
-tmux set-window-option -g status-bg colour$((RANDOM % 256))
+# (Without -g it applies to the current session, not the entire server)
+tmux set-window-option status-bg colour$((RANDOM % 256))
 
 # If you choose a dark background, then you might like to choose a slightly lighter foreground
 tmux set-window-option -g window-status-fg colour6

@@ -21,9 +21,7 @@ In System Settings:
   Note: This (somewhat inconsistent) binding may no longer be needed.  Try Fn-Ctrl-C or F instead.
 - Under Keyboard > Text Input > Input Sources > Edit, uncheck the box for "Add period [full-stop] with double-space".
 
-- Mouse > Scrolling speed was set 1 left of the middle. I increased it by 3, one down from the max. But I haven't experienced the change! Perhaps it only makes a difference if the mouse wheel is analogue (mine is clicky).
-
-  Although it does seem to affect Accessibility > Zoom, if I spin the wheel, which is good!
+- Mouse > Scrolling speed was set 1 left of the middle. I increased it by two, two down from the max.  With my mouse's digital scroll-wheel, it actually appears to affect acceleration more than speed.  But now I have reverted to the original.
 
 In case you choose to remap Ctrl-Left and Ctrl-Right in future, you can make desktop switching like Linux by doing:
 

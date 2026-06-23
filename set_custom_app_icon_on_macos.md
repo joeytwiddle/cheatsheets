@@ -34,8 +34,13 @@ Downsides of this method:
 
 Unfortunately, if you have enabled "Reopen windows when logging back in" on restart, macOS will start the apps with their default icons, rather than starting the apps you created with custom icons.
 
-The best workaround I have found for that is to disable "Reopen windows" and instead manually configure which apps to load on login:
+Advice pre-Tahoe: The best workaround I have found for that is to disable "Reopen windows" and instead manually configure which apps to load on login:
 
 1. Go to System Settings > General > Login Items & Extensions
 2. Add to Open at Login all your regular applications, and be sure to select the apps from _your_ Applications folder, rather than the system Applications folder.
 3. The next time you perform a restart, be sure to disable "Reopen windows when logging back in".
+
+Unfortunately this stopped working around Tahoe 26.3. So my current advice is now:
+
+- Disable "Reopen windows when logging back in" and also remove the relevant "Login Items & Extensions".
+- You just have to manually open the apps that you want custom icons for.
